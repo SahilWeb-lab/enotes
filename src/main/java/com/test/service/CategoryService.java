@@ -14,4 +14,10 @@ public interface CategoryService {
 	
 //	Create a method to get active categories:
 	public List<CategoryResponse> getActiveCategories();
+	
+//	Create a method to get category by id:
+	public CategoryDTO getCategoryById(Integer id);
+	
+//	Create a method to delete the category:
+	public Boolean deleteCategory(Integer id);
 }
