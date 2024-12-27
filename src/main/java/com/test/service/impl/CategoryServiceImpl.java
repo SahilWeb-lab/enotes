@@ -1,5 +1,6 @@
 package com.test.service.impl;
 
+import java.util.Date;
 import java.util.List;
 import java.util.Optional;
 
@@ -32,15 +33,31 @@ public class CategoryServiceImpl implements CategoryService {
 		
 		Category category = modelMapper.map(categoryDTO, Category.class);
 		
-		category.setIsDeleted(false);
-		category.setCreatedBy(1);
+		if(ObjectUtils.isEmpty(category.getId())) {			
+			category.setIsDeleted(false);
+			category.setCreatedBy(1);
+		} else {
+			updateCategory(category);
+		}
+				
 		Category saveCategory = categoryRepository.save(category);
-		
 		if(!ObjectUtils.isEmpty(saveCategory)) {
 			return true;
 		}
 		
 		return false;
+	}
+
+	private void updateCategory(Category category) {
+		Optional<Category> existingCategory = categoryRepository.findById(category.getId());
+		if(existingCategory.isPresent()) {
+			Category myCategory = existingCategory.get();
+			category.setCreatedBy(myCategory.getCreatedBy());
+			category.setCreatedOn(myCategory.getCreatedOn());
+			category.setIsDeleted(myCategory.getIsDeleted());
+			category.setUpdatedBy(1);
+			category.setUpdatedOn(new Date());
+		}
 	}
 
 	@Override
