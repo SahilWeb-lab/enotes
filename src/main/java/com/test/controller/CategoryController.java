@@ -12,6 +12,8 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.test.dto.CategoryDTO;
+import com.test.dto.CategoryResponse;
 import com.test.model.Category;
 import com.test.service.CategoryService;
 
@@ -23,7 +25,7 @@ public class CategoryController {
 	private CategoryService categoryService;
 	
 	@PostMapping("/save-category")
-	public ResponseEntity<?> saveCategory(@RequestBody Category category) {
+	public ResponseEntity<?> saveCategory(@RequestBody CategoryDTO category) {
 		Boolean saveCategory = categoryService.saveCategory(category);
 		
 		if(saveCategory) {
@@ -35,14 +37,24 @@ public class CategoryController {
 	
 	@GetMapping("/categories")
 	public ResponseEntity<?> getAllCategories() {
-		List<Category> allCategories = categoryService.getAllCategories();
+		List<CategoryDTO> allCategories = categoryService.getAllCategories();
 		
 		if(CollectionUtils.isEmpty(allCategories)) {
 			return ResponseEntity.noContent().build();
 		} 
 		
 		return new ResponseEntity<>(allCategories, HttpStatus.OK);
-		
 	}
 	
+//	Create a handler to show active categories:
+	@GetMapping("/active-categories")
+	public ResponseEntity<?> getActiveCategories() {
+List<CategoryResponse> allCategories = categoryService.getActiveCategories();
+		
+		if(CollectionUtils.isEmpty(allCategories)) {
+			return ResponseEntity.noContent().build();
+		} 
+		
+		return new ResponseEntity<>(allCategories, HttpStatus.OK);
+	}
 }
