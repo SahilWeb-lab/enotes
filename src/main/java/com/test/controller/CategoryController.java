@@ -42,6 +42,9 @@ public class CategoryController {
 	public ResponseEntity<?> getAllCategories() {
 		List<CategoryDTO> allCategories = categoryService.getAllCategories();
 		
+//		String name = null;
+//		name.length();
+		
 		if(CollectionUtils.isEmpty(allCategories)) {
 			return ResponseEntity.noContent().build();
 		} 
@@ -63,15 +66,16 @@ List<CategoryResponse> allCategories = categoryService.getActiveCategories();
 	
 //	Create a handler to get category by id:
 	@GetMapping("/{id}")
-	public ResponseEntity<?> getCategoryById(@PathVariable Integer id) {
+	public ResponseEntity<?> getCategoryById(@PathVariable Integer id) throws Exception {
 		CategoryDTO categoryById = categoryService.getCategoryById(id);
 		
-		if(ObjectUtils.isEmpty(categoryById)) {
-			return new ResponseEntity<>("Category not found with id : " + id, HttpStatus.NOT_FOUND);
+		if(!ObjectUtils.isEmpty(categoryById)) {
+//			String name = null;
+//			name.length();
+			return new ResponseEntity<>(categoryById, HttpStatus.OK);
 		}
 		
-		return new ResponseEntity<>(categoryById, HttpStatus.OK);
-		
+		return null;
 	}
 	
 //	Create a handler to delete the category by id:
