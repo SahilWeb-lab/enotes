@@ -20,6 +20,8 @@ import com.test.dto.CategoryResponse;
 import com.test.model.Category;
 import com.test.service.CategoryService;
 
+import jakarta.validation.Valid;
+
 @RestController
 @RequestMapping("/api/v1/category")
 public class CategoryController {
