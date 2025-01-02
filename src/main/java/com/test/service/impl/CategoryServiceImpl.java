@@ -11,6 +11,7 @@ import org.springframework.util.ObjectUtils;
 
 import com.test.dto.CategoryDTO;
 import com.test.dto.CategoryResponse;
+import com.test.exception.ExistDataException;
 import com.test.exception.ResourceNotFoundException;
 import com.test.model.Category;
 import com.test.repository.CategoryRepository;
@@ -38,6 +39,13 @@ public class CategoryServiceImpl implements CategoryService {
 		
 		
 		validation.categoryValidation(categoryDTO);
+		
+//		Check category already exist
+		Boolean existsByName = categoryRepository.existsByName(categoryDTO.getName().trim());
+		
+		if(existsByName) {
+			throw new ExistDataException("Category [" + categoryDTO.getName() + "] already exists!");
+		}
 		
 		Category category = modelMapper.map(categoryDTO, Category.class);
 		
