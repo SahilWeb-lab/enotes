@@ -19,6 +19,7 @@ import com.test.dto.CategoryDTO;
 import com.test.dto.CategoryResponse;
 import com.test.model.Category;
 import com.test.service.CategoryService;
+import com.test.util.CommonUtils;
 
 import jakarta.validation.Valid;
 
@@ -34,10 +35,12 @@ public class CategoryController {
 		Boolean saveCategory = categoryService.saveCategory(category);
 		
 		if(saveCategory) {
-			return new ResponseEntity<>("Category Saved Successfully!", HttpStatus.CREATED);
+			return CommonUtils.createBuildResponseMessage("Category saved successfully!", HttpStatus.CREATED);
+//			return new ResponseEntity<>("Category Saved Successfully!", HttpStatus.CREATED);
 		}
 		
-		return new ResponseEntity<>("Failed to save category!", HttpStatus.INTERNAL_SERVER_ERROR);
+		return CommonUtils.createErrorResponseMessage("Failed", HttpStatus.INTERNAL_SERVER_ERROR);
+//		return new ResponseEntity<>("Failed to save category!", HttpStatus.INTERNAL_SERVER_ERROR);
 	}
 	
 	@GetMapping("/categories")
@@ -51,7 +54,7 @@ public class CategoryController {
 			return ResponseEntity.noContent().build();
 		} 
 		
-		return new ResponseEntity<>(allCategories, HttpStatus.OK);
+		return CommonUtils.createBuildResponse(allCategories, HttpStatus.OK);
 	}
 	
 //	Create a handler to show active categories:
@@ -63,7 +66,8 @@ List<CategoryResponse> allCategories = categoryService.getActiveCategories();
 			return ResponseEntity.noContent().build();
 		} 
 		
-		return new ResponseEntity<>(allCategories, HttpStatus.OK);
+		return CommonUtils.createBuildResponse(allCategories, HttpStatus.OK);
+//		return new ResponseEntity<>(allCategories, HttpStatus.OK);
 	}
 	
 //	Create a handler to get category by id:
@@ -74,7 +78,8 @@ List<CategoryResponse> allCategories = categoryService.getActiveCategories();
 		if(!ObjectUtils.isEmpty(categoryById)) {
 //			String name = null;
 //			name.length();
-			return new ResponseEntity<>(categoryById, HttpStatus.OK);
+			return CommonUtils.createBuildResponse(categoryById, HttpStatus.OK);
+//			return new ResponseEntity<>(categoryById, HttpStatus.OK);
 		}
 		
 		return null;
@@ -86,10 +91,12 @@ List<CategoryResponse> allCategories = categoryService.getActiveCategories();
 		Boolean deleteCategory = categoryService.deleteCategory(id);
 		
 		if(deleteCategory) {
-			return new ResponseEntity<>("Category deleted successfully!", HttpStatus.OK);
+			return CommonUtils.createBuildResponseMessage("Success", HttpStatus.OK);
+//			return new ResponseEntity<>("Category deleted successfully!", HttpStatus.OK);
 		} 
 		
-		return new ResponseEntity<>("Failed to delete category!", HttpStatus.INTERNAL_SERVER_ERROR);
+		return CommonUtils.createBuildResponseMessage("Failed", HttpStatus.INTERNAL_SERVER_ERROR);
+//		return new ResponseEntity<>("Failed to delete category!", HttpStatus.INTERNAL_SERVER_ERROR);
 		
 	}
 }
