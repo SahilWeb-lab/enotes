@@ -19,11 +19,10 @@ import com.test.util.CommonUtils;
 @ControllerAdvice
 public class GlobalExceptionHandler {
 	
-//	@ExceptionHandler(exception = Exception.class)
-//	public ResponseEntity<?> handleException(Exception exception) {
-//		System.out.println("My handleException is Running.....");
-//		return new ResponseEntity<>(exception.getMessage(), HttpStatus.INTERNAL_SERVER_ERROR);
-//	}
+	@ExceptionHandler(exception = Exception.class)
+	public ResponseEntity<?> handleException(Exception exception) {
+		return CommonUtils.createErrorResponseMessage(exception.getMessage(), HttpStatus.INTERNAL_SERVER_ERROR);
+	}
 	
 	@ExceptionHandler(exception = NullPointerException.class)
 	public ResponseEntity<?> nullPointerException(Exception exception) {

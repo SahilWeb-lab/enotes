@@ -1,13 +1,9 @@
 package com.test.model;
 
-import org.springframework.data.jpa.domain.support.AuditingEntityListener;
-
 import jakarta.persistence.Entity;
-import jakarta.persistence.EntityListeners;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
-import jakarta.persistence.ManyToOne;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -18,19 +14,19 @@ import lombok.Setter;
 @Setter
 @Getter
 @Entity
-@EntityListeners(AuditingEntityListener.class)
-public class Notes extends BaseModel {
+public class FileDetails {
+	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int id;
 	
-	private String title;
+	private String uploadedFileName;
 	
-	private String description;
+	private String originalFileName;
 	
-	@ManyToOne
-	private Category category;
+	private String displayFileName;
 	
-	@ManyToOne
-	private FileDetails file;
+	private String path;
+	
+	private Long fileSize;
 }
