@@ -8,6 +8,7 @@ import org.springframework.stereotype.Component;
 import org.springframework.util.ObjectUtils;
 
 import com.test.dto.CategoryDTO;
+import com.test.dto.NotesDTO;
 import com.test.exception.ValidationException;
 
 @Component
@@ -16,6 +17,7 @@ public class Validation {
 	Logger logger = Logger.getLogger(Validation.class.getName());
 	
 //	Create a method for validation:
+//	Catergory Validation:
 	public void categoryValidation(CategoryDTO categoryDTO) {
 		Map<String, Object> errors = new LinkedHashMap<>();
 	
@@ -27,7 +29,7 @@ public class Validation {
 			if(ObjectUtils.isEmpty(categoryDTO.getName())) {
 				errors.put("name", "Name field is empty or null!");
 			} else {
-				if(categoryDTO.getName().length() < 3) {
+				if(categoryDTO.getName().length() <= 3) {
 					errors.put("name", "Name length min 3!");
 				} 
 				
@@ -64,4 +66,34 @@ public class Validation {
 			}
 	}
 }
+	
+	
+//	Notes Validation:
+	public void notesValidation(NotesDTO notesDTO) throws IllegalAccessException {
+		Map<String, Object> errors = new LinkedHashMap<>();
+		
+		if(ObjectUtils.isEmpty(notesDTO)) {
+			throw new IllegalAccessException("Notes object/JSON shouldn't be null or empty!");
+		} else {
+			if(ObjectUtils.isEmpty(notesDTO.getTitle())) {
+				errors.put("title", "Title field is empty or null!");
+			} 
+			
+			if(notesDTO.getTitle().length() < 5) {
+				errors.put("title", "Title length min 5!");
+			}
+			
+			if(ObjectUtils.isEmpty(notesDTO.getDescription())) {
+				errors.put("description", "Description field is empty or null!");
+			}
+			
+			if(ObjectUtils.isEmpty(notesDTO.getCategory().getId())) {
+				errors.put("category", "Category field is empty or null!");
+			}
+			
+			if(!errors.isEmpty()) {
+				throw new ValidationException(errors);
+			}
+		}
+	}
 }

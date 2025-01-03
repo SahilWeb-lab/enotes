@@ -9,11 +9,13 @@ import org.springframework.util.ObjectUtils;
 
 import com.test.dto.NotesDTO;
 import com.test.dto.NotesDTO.CategoryDTO;
+import com.test.exception.ExistDataException;
 import com.test.exception.ResourceNotFoundException;
 import com.test.model.Notes;
 import com.test.repository.CategoryRepository;
 import com.test.repository.NotesRepository;
 import com.test.service.NotesService;
+import com.test.util.Validation;
 
 @Service
 public class NotesServiceImpl implements NotesService {
@@ -27,10 +29,22 @@ public class NotesServiceImpl implements NotesService {
 	@Autowired
 	private CategoryRepository categoryRepository;
 	
+	@Autowired
+	private Validation validation;
+	
 	@Override
 	public Boolean saveNotes(NotesDTO notesDTO) throws Exception  {
 		
 //		Validation:
+		validation.notesValidation(notesDTO);
+		
+//		Check notes already exist
+		Boolean existsByTitle = notesRepository.existsByTitle(notesDTO.getTitle().trim());
+		
+		if(existsByTitle) {
+			throw new ExistDataException("Notes ["+ notesDTO.getTitle() +"] already exists!");
+		}
+		
 		CategoryDTO categoryDTO = notesDTO.getCategory();
 		checkCategoryExist(categoryDTO);
 		
