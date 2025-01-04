@@ -15,6 +15,9 @@ import org.apache.commons.io.FilenameUtils;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Pageable;
 import org.springframework.http.HttpHeaders;
 import org.springframework.stereotype.Service;
 import org.springframework.util.ObjectUtils;
@@ -24,6 +27,7 @@ import org.springframework.web.multipart.MultipartFile;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.test.dto.NotesDTO;
 import com.test.dto.NotesDTO.CategoryDTO;
+import com.test.dto.NotesResponse;
 import com.test.exception.ExistDataException;
 import com.test.exception.ResourceNotFoundException;
 import com.test.model.FileDetails;
@@ -173,7 +177,24 @@ public class NotesServiceImpl implements NotesService {
 		
 		return fileDetails;
 	}
-	
-	
+
+	@Override
+	public NotesResponse getAllNotesByUser(Integer userId, Integer pageNo, Integer pageSize) {
+		Pageable pageable = PageRequest.of(pageNo, pageSize);
+		Page<Notes> notes = notesRepository.findByCreatedBy(userId, pageable);	
+		
+		List<NotesDTO> notesDTOs = notes.stream().map(note -> modelMapper.map(note, NotesDTO.class)).toList();
+		
+		NotesResponse notesResponse = NotesResponse.builder()
+				.notes(notesDTOs)
+				.pageNo(notes.getNumber() + 1)
+				.pageSize(notes.getSize())
+				.totalPages(notes.getTotalPages())
+				.isFirst(notes.isFirst())
+				.isLast(notes.isLast())
+				.totalElements(notes.getTotalElements())
+				.build();
+		return notesResponse;
+	}
 
 }

@@ -18,6 +18,7 @@ import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.multipart.MultipartFile;
 
 import com.test.dto.NotesDTO;
+import com.test.dto.NotesResponse;
 import com.test.model.FileDetails;
 import com.test.service.NotesService;
 import com.test.util.CommonUtils;
@@ -63,6 +64,17 @@ public class NotesController {
 		headers.setContentDispositionFormData("attachment", fileDetails.getOriginalFileName());
 		
 		return ResponseEntity.ok().headers(headers).body(data);
+	}
+	
+	@GetMapping("/user-notes")
+	public ResponseEntity<?> getAllNotesByUser(
+				@RequestParam(name = "pageNo", defaultValue = "0") Integer pageNo,
+				@RequestParam(name = "pageSize", defaultValue = "10") Integer pageSize
+			) {
+		Integer userId = 2;
+		NotesResponse allNotesByUser = notesService.getAllNotesByUser(userId, pageNo, pageSize);
+		
+		return CommonUtils.createBuildResponse(allNotesByUser, HttpStatus.OK);
 	}
 	
 }
