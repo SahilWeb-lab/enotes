@@ -1,7 +1,10 @@
 package com.test.service.impl;
 
 import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.io.InputStream;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.util.Arrays;
@@ -12,8 +15,10 @@ import org.apache.commons.io.FilenameUtils;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.http.HttpHeaders;
 import org.springframework.stereotype.Service;
 import org.springframework.util.ObjectUtils;
+import org.springframework.util.StreamUtils;
 import org.springframework.web.multipart.MultipartFile;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -93,7 +98,7 @@ public class NotesServiceImpl implements NotesService {
 
 		if (!file.isEmpty()) {
 //			Create a list of allowed file extension
-			List<String> allowedExtensions = Arrays.asList("pdf", "xlsx", "png", "jpeg", "jpg", ".txt");
+			List<String> allowedExtensions = Arrays.asList("pdf", "xlsx", "png", "jpeg", "jpg", "txt");
 			
 			
 			String originalFilename = file.getOriginalFilename();
@@ -155,5 +160,20 @@ public class NotesServiceImpl implements NotesService {
 	public List<NotesDTO> getAllNotes() {
 		return notesRepository.findAll().stream().map(note -> modelMapper.map(note, NotesDTO.class)).toList();
 	}
+
+	@Override
+	public byte[] downloadFile(FileDetails fileDetails) throws Exception {
+		InputStream io = new FileInputStream(fileDetails.getPath());
+		return StreamUtils.copyToByteArray(io);
+	}
+
+	@Override
+	public FileDetails getFileDetails(Integer id) throws Exception {
+		FileDetails fileDetails = fileRepository.findById(id).orElseThrow(() -> new ResourceNotFoundException("File is not available!"));
+		
+		return fileDetails;
+	}
+	
+	
 
 }

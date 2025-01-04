@@ -3,6 +3,7 @@ package com.test.exception;
 import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
+import java.io.FileNotFoundException;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -70,6 +71,12 @@ public class GlobalExceptionHandler {
 	public ResponseEntity<?> HttpMessageNotReadableException(HttpMessageNotReadableException exception) {
 		return CommonUtils.createErrorResponseMessage(exception.getMessage(), HttpStatus.BAD_REQUEST);
 //		return new ResponseEntity<>(exception.getMessage(), HttpStatus.BAD_REQUEST);
+	}
+	
+	@ExceptionHandler(exception = FileNotFoundException.class)
+	public ResponseEntity<?> FileNotFoundException(FileNotFoundException exception) {
+		return CommonUtils.createErrorResponseMessage(exception.getMessage(), HttpStatus.NOT_FOUND);
+
 	}
 	
 }
