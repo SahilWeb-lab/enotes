@@ -7,6 +7,8 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.nio.file.Files;
 import java.nio.file.Paths;
+import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.util.Arrays;
 import java.util.Date;
 import java.util.List;
@@ -21,6 +23,7 @@ import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
 import org.springframework.http.HttpHeaders;
 import org.springframework.stereotype.Service;
+import org.springframework.util.CollectionUtils;
 import org.springframework.util.ObjectUtils;
 import org.springframework.util.StreamUtils;
 import org.springframework.web.multipart.MultipartFile;
@@ -219,7 +222,7 @@ public class NotesServiceImpl implements NotesService {
 	public void softDeleteNotes(Integer id) throws Exception {
 		Notes notes = notesRepository.findById(id).orElseThrow(() -> new ResourceNotFoundException("Notes not found with id ["+ id +"]"));
 		notes.setIsDeleted(true);
-		notes.setDeletedOn(new Date());
+		notes.setDeletedOn(LocalDateTime.now());
 		notesRepository.save(notes);
 	}
 
@@ -236,6 +239,30 @@ public class NotesServiceImpl implements NotesService {
 		List<Notes> notes = notesRepository.findByCreatedByAndIsDeletedTrue(userId);
 		List<NotesDTO> notesDTO = notes.stream().map(note -> modelMapper.map(note, NotesDTO.class)).toList();
 		return notesDTO;
+	}
+
+
+
+	@Override
+	public void hardDelete(Integer id) throws Exception {
+		Notes notes = notesRepository.findById(id).orElseThrow(() -> new ResourceNotFoundException("Notes not found with id ["+ id +"]"));
+		
+		if(notes.getIsDeleted()) {			
+			notesRepository.delete(notes);
+		} else {
+			throw new IllegalArgumentException("Sorry! You can't hard delete directly!");
+		}
+		
+	}
+
+	@Override
+	public void emptyRecycleBin(Integer userId) {
+		List<Notes> notes = notesRepository.findByCreatedByAndIsDeletedTrue(userId);
+		
+		if(!CollectionUtils.isEmpty(notes)) {
+			notesRepository.deleteAll(notes);
+		}
+		
 	}
 	
 }

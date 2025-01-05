@@ -1,5 +1,6 @@
 package com.test.repository;
 
+import java.time.LocalDateTime;
 import java.util.List;
 
 import org.springframework.data.domain.Page;
@@ -14,4 +15,6 @@ public interface NotesRepository extends JpaRepository<Notes, Integer> {
 	public Page<Notes> findByCreatedByAndIsDeletedFalse(Integer userId, Pageable pageable);
 	
 	public List<Notes> findByCreatedByAndIsDeletedTrue(Integer userId);
+	
+	public List<Notes> findByIsDeletedTrueAndDeletedOnBefore(LocalDateTime cutOffDate);
 }
