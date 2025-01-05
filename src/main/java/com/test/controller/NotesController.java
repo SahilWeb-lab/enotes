@@ -7,6 +7,7 @@ import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
+import org.springframework.util.CollectionUtils;
 import org.springframework.util.ObjectUtils;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -18,6 +19,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.multipart.MultipartFile;
 
+import com.test.dto.FavouriteNoteDTO;
 import com.test.dto.NotesDTO;
 import com.test.dto.NotesResponse;
 import com.test.model.FileDetails;
@@ -116,6 +118,29 @@ public class NotesController {
 		notesService.emptyRecycleBin(userId);
 		
 		return CommonUtils.createBuildResponseMessage("Recycle bin is empty!", HttpStatus.OK);
+	}
+	
+	@GetMapping("/fav/{noteId}")
+	public ResponseEntity<?> addFavourite(@PathVariable Integer noteId) throws Exception {
+		notesService.favouriteNotes(noteId);
+		return CommonUtils.createBuildResponseMessage("Notes added to favourite!", HttpStatus.OK);
+	}
+	
+	@DeleteMapping("/fav/{favNoteId}")
+	public ResponseEntity<?> removeFavourite(@PathVariable Integer favNoteId) throws Exception {
+		notesService.unFavouriteNotes(favNoteId);
+		return CommonUtils.createBuildResponseMessage("Notes removed from favourite!", HttpStatus.OK);
+	}
+	
+	@GetMapping("/fav-notes")
+	public ResponseEntity<?> getFavouriteNotes() throws Exception {
+		List<FavouriteNoteDTO> favouriteNotes = notesService.getUserFavouriteNotes();
+		
+		if(CollectionUtils.isEmpty(favouriteNotes)) {
+			return ResponseEntity.noContent().build();
+		}
+		
+		return CommonUtils.createBuildResponse(favouriteNotes, HttpStatus.OK);
 	}
 	
 }

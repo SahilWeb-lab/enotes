@@ -6,6 +6,7 @@ import org.springframework.web.multipart.MultipartFile;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.JsonMappingException;
+import com.test.dto.FavouriteNoteDTO;
 import com.test.dto.NotesDTO;
 import com.test.dto.NotesResponse;
 import com.test.exception.ResourceNotFoundException;
@@ -34,5 +35,11 @@ public interface NotesService {
 	public void hardDelete(Integer id) throws Exception;
 
 	public void emptyRecycleBin(Integer userId);
+	
+	public void favouriteNotes(Integer noteId) throws Exception;
+	
+	public void unFavouriteNotes(Integer noteId) throws Exception;
+	
+	public List<FavouriteNoteDTO> getUserFavouriteNotes();
 	
 }
