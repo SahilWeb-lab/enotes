@@ -14,7 +14,7 @@ import lombok.Setter;
 @Getter
 @Setter
 public class NotesDTO {
-	
+
 	private int id;
 
 	private String title;
@@ -22,7 +22,7 @@ public class NotesDTO {
 	private String description;
 
 	private CategoryDTO category;
-	
+
 	private Integer createdBy;
 
 	private Date createdOn;
@@ -30,21 +30,25 @@ public class NotesDTO {
 	private Integer updatedBy;
 
 	private Date updatedOn;
-	
+
 	private FilesDTO file;
-	
+
+	private Boolean isDeleted;
+
+	private Date deletedOn;
+
 	@Getter
 	@Setter
 	@AllArgsConstructor
 	@NoArgsConstructor
 	public static class FilesDTO {
 		private int id;
-		
+
 		private String originalFileName;
-		
+
 		private String displayFileName;
 	}
-	
+
 	@Getter
 	@Setter
 	@AllArgsConstructor
