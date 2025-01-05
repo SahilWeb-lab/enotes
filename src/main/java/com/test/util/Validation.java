@@ -2,7 +2,6 @@ package com.test.util;
 
 import java.util.LinkedHashMap;
 import java.util.Map;
-import java.util.logging.Logger;
 
 import org.springframework.stereotype.Component;
 import org.springframework.util.ObjectUtils;
@@ -14,10 +13,8 @@ import com.test.exception.ValidationException;
 @Component
 public class Validation {
 	
-	Logger logger = Logger.getLogger(Validation.class.getName());
-	
 //	Create a method for validation:
-//	Catergory Validation:
+//	Category Validation:
 	public void categoryValidation(CategoryDTO categoryDTO) {
 		Map<String, Object> errors = new LinkedHashMap<>();
 	
