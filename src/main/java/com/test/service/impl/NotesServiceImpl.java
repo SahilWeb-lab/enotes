@@ -300,5 +300,25 @@ public class NotesServiceImpl implements NotesService {
 		
 		return favNotesDTO;
 	}
-	
+
+	@Override
+	public Boolean copyNotes(Integer noteId) throws Exception {
+		Notes notes = notesRepository.findById(noteId).orElseThrow(() -> new ResourceNotFoundException("Notes with id ["+ noteId +"] not found!"));
+		
+		Notes copyNotes = Notes.builder()
+				.category(notes.getCategory())
+				.title(notes.getTitle())
+				.description(notes.getDescription())
+				.isDeleted(false)
+				.file(null)
+				.build();
+		
+		Notes saveNotes = notesRepository.save(copyNotes);
+		
+		if(ObjectUtils.isEmpty(saveNotes)) {
+			return false;
+		}
+		
+		return true;
+	}
 }
