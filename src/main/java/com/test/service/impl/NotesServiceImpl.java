@@ -313,6 +313,8 @@ public class NotesServiceImpl implements NotesService {
 				.file(null)
 				.build();
 		
+		
+//		TODO: Need to check user validation:
 		Notes saveNotes = notesRepository.save(copyNotes);
 		
 		if(ObjectUtils.isEmpty(saveNotes)) {

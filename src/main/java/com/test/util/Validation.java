@@ -8,6 +8,9 @@ import org.springframework.util.ObjectUtils;
 
 import com.test.dto.CategoryDTO;
 import com.test.dto.NotesDTO;
+import com.test.dto.TodoDTO;
+import com.test.dto.TodoDTO.StatusDTO;
+import com.test.enums.TodoStatus;
 import com.test.exception.ValidationException;
 
 @Component
@@ -92,5 +95,23 @@ public class Validation {
 				throw new ValidationException(errors);
 			}
 		}
+	}
+
+
+//	TODO Validation:
+	public void todoValidation(TodoDTO todoDTO) {
+		StatusDTO statusDTO = todoDTO.getStatus();
+		TodoStatus[] todoStatus = TodoStatus.values();
+		
+		Boolean status = false;
+		
+		for(TodoStatus st : todoStatus) {
+			if(st.getId().equals(statusDTO.getId())) {
+				status = true;
+			}
+		}
+		
+		if(!status)
+			throw new IllegalArgumentException("Invalid Status!");
 	}
 }
