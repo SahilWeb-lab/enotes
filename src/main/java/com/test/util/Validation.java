@@ -16,15 +16,20 @@ import com.test.dto.TodoDTO;
 import com.test.dto.UserDTO;
 import com.test.dto.TodoDTO.StatusDTO;
 import com.test.enums.TodoStatus;
+import com.test.exception.ExistDataException;
 import com.test.exception.ValidationException;
 import com.test.model.Role;
 import com.test.repository.RoleRepository;
+import com.test.repository.UserRepository;
 
 @Component
 public class Validation {
 	
 	@Autowired
 	private RoleRepository roleRepository;
+	
+	@Autowired
+	private UserRepository userRepository;
 	
 	
 //	Create a method for validation:
@@ -141,6 +146,12 @@ public class Validation {
 		
 		if(!StringUtils.hasText(userDTO.getEmail()) || userDTO.getEmail().contains(Constants.EMAIL_REGEX)) {
 			throw new IllegalArgumentException("Email address is invalid!");
+		} else {
+			
+			Boolean existsByEmail = userRepository.existsByEmail(userDTO.getEmail());
+			
+			if(existsByEmail)
+				throw new ExistDataException(userDTO.getEmail() +  " already exists!");
 		}
 		
 		if(!StringUtils.hasText(userDTO.getMobileNo()) || userDTO.getMobileNo().contains(Constants.MOBNO_REGEX)) {
