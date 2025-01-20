@@ -153,7 +153,7 @@ public class Validation {
 			if(existsByEmail)
 				throw new ExistDataException(userDTO.getEmail() +  " already exists!");
 		}
-		
+
 		if(!StringUtils.hasText(userDTO.getMobileNo()) || userDTO.getMobileNo().contains(Constants.MOBNO_REGEX)) {
 			throw new IllegalArgumentException("Mobile number is invalid!");
 		}

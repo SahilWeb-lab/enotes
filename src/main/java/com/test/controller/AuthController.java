@@ -20,7 +20,7 @@ public class AuthController {
 	private UserService userService;
 	
 	@PostMapping("/save")
-	public ResponseEntity<?> registerUser(@RequestBody UserDTO userDTO) {
+	public ResponseEntity<?> registerUser(@RequestBody UserDTO userDTO) throws Exception {
 		Boolean status = userService.registerUser(userDTO);
 		
 		if(status)

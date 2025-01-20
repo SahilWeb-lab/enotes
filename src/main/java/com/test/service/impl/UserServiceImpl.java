@@ -7,11 +7,13 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.util.ObjectUtils;
 
+import com.test.dto.EmailRequest;
 import com.test.dto.UserDTO;
 import com.test.model.Role;
 import com.test.model.User;
 import com.test.repository.RoleRepository;
 import com.test.repository.UserRepository;
+import com.test.service.SendEmailService;
 import com.test.service.UserService;
 import com.test.util.Validation;
 
@@ -30,8 +32,11 @@ public class UserServiceImpl implements UserService {
 	@Autowired
 	private ModelMapper modelMapper;
 	
+	@Autowired
+	private SendEmailService emailService;
+	
 	@Override
-	public Boolean registerUser(UserDTO userDTO) {
+	public Boolean registerUser(UserDTO userDTO) throws Exception {
 		
 //		Call the method to validate user:
 		validation.userValidation(userDTO);
@@ -41,10 +46,32 @@ public class UserServiceImpl implements UserService {
 		
 		User saveUser = userRepository.save(user);
 		
-		if(!ObjectUtils.isEmpty(saveUser))
+		if(!ObjectUtils.isEmpty(saveUser)) {
+//			Send email:
+			sendEmail(saveUser);
 			return true;
+		}
 		
 		return false;
+	}
+
+	private void sendEmail(User saveUser) throws Exception {
+		
+		String msg = "Hi,<b>"+saveUser.getFirstName()+"</b> "
+				+ "<br> Your account register sucessfully.<br>"
+				+"<br> Click the below link verify & Active your account <br>"
+				+"<a href='#'>Click Here</a> <br><br>"
+				+"Thanks,<br>Enotes.com"
+				;
+		
+		EmailRequest request = EmailRequest.builder()
+								.to(saveUser.getEmail())
+								.title("Account Creation Confirmation!!")
+								.subject("Please confirm you account!!!")
+								.message(msg)
+								.build();
+		
+		emailService.send(request);
 	}
 
 	private void setRole(UserDTO userDTO, User user) {

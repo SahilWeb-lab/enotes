@@ -5,6 +5,6 @@ import com.test.dto.UserDTO;
 public interface UserService {
 	
 //	Create a method to register the user:
-	public Boolean registerUser(UserDTO userDTO);
+	public Boolean registerUser(UserDTO userDTO) throws Exception;
 	
 }
