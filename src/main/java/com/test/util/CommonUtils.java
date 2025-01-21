@@ -7,6 +7,8 @@ import org.springframework.http.ResponseEntity;
 
 import com.test.handle.GenericResponse;
 
+import jakarta.servlet.http.HttpServletRequest;
+
 public class CommonUtils {
 	public static ResponseEntity<?> createBuildResponse(Object data, HttpStatus status) {
 		System.out.println("Error message is called!");
@@ -55,5 +57,13 @@ public class CommonUtils {
 		default:
 			return "application/octet-stream";
 		}
+	}
+
+//	Create a method to get the url:
+	public static String getUrl(HttpServletRequest request) {
+		String siteUrl = request.getRequestURL().toString();
+		String servletPath = request.getServletPath();
+		String url = siteUrl.replace(servletPath, "");
+		return url;
 	}
 }

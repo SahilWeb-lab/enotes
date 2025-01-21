@@ -85,4 +85,10 @@ public class GlobalExceptionHandler {
 
 	}
 	
+	@ExceptionHandler(exception = SuccessException.class)
+	public ResponseEntity<?> handleSuccessException(SuccessException exception) {
+		return CommonUtils.createBuildResponseMessage(exception.getMessage(), HttpStatus.OK);
+
+	}
+	
 }

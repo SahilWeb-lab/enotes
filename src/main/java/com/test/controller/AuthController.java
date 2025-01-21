@@ -12,16 +12,19 @@ import com.test.dto.UserDTO;
 import com.test.service.UserService;
 import com.test.util.CommonUtils;
 
+import jakarta.servlet.http.HttpServletRequest;
+
 @RestController
-@RequestMapping("/api/v1/user")
+@RequestMapping("/api/v1/auth")
 public class AuthController {
 
 	@Autowired
 	private UserService userService;
 	
 	@PostMapping("/save")
-	public ResponseEntity<?> registerUser(@RequestBody UserDTO userDTO) throws Exception {
-		Boolean status = userService.registerUser(userDTO);
+	public ResponseEntity<?> registerUser(@RequestBody UserDTO userDTO, HttpServletRequest request) throws Exception {
+		String url = CommonUtils.getUrl(request);
+		Boolean status = userService.registerUser(userDTO, url);
 		
 		if(status)
 			return CommonUtils.createBuildResponseMessage("User registered successfully!", HttpStatus.CREATED);
