@@ -22,6 +22,7 @@ import com.test.model.Role;
 import com.test.model.User;
 import com.test.repository.RoleRepository;
 import com.test.repository.UserRepository;
+import com.test.service.JwtService;
 import com.test.service.SendEmailService;
 import com.test.service.UserService;
 import com.test.util.Validation;
@@ -49,6 +50,9 @@ public class UserServiceImpl implements UserService {
 	
 	@Autowired
 	private BCryptPasswordEncoder passwordEncoder;
+	
+	@Autowired
+	private JwtService jwtService;
 	
 	@Override
 	public Boolean registerUser(UserDTO userDTO, String url) throws Exception {
@@ -115,7 +119,7 @@ public class UserServiceImpl implements UserService {
 		if(authenticate.isAuthenticated()) {
 			CustomUserDetails customUserDetails = (CustomUserDetails) authenticate.getPrincipal();
 			
-			String token = "dskjfajsfahfhjdafjdfkjjdfjdhsjfhjdfjskj";
+			String token = jwtService.generateToken(customUserDetails.getUser());
 			
 			LoginResponse loginResponse = LoginResponse.builder()
 					.user(customUserDetails.getUser())
