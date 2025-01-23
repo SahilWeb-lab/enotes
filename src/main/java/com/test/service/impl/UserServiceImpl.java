@@ -5,10 +5,17 @@ import java.util.UUID;
 
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.authentication.AuthenticationManager;
+import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
+import org.springframework.security.core.Authentication;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 import org.springframework.util.ObjectUtils;
 
+import com.test.config.CustomUserDetails;
 import com.test.dto.EmailRequest;
+import com.test.dto.LoginRequest;
+import com.test.dto.LoginResponse;
 import com.test.dto.UserDTO;
 import com.test.model.AccountStatus;
 import com.test.model.Role;
@@ -37,6 +44,12 @@ public class UserServiceImpl implements UserService {
 	@Autowired
 	private SendEmailService emailService;
 	
+	@Autowired
+	private AuthenticationManager authenticationManager;
+	
+	@Autowired
+	private BCryptPasswordEncoder passwordEncoder;
+	
 	@Override
 	public Boolean registerUser(UserDTO userDTO, String url) throws Exception {
 		
@@ -53,7 +66,7 @@ public class UserServiceImpl implements UserService {
 				build();
 		
 		user.setStatus(accountStatus);
-		
+		user.setPassword(passwordEncoder.encode(user.getPassword()));
 		User saveUser = userRepository.save(user);
 		
 		if(!ObjectUtils.isEmpty(saveUser)) {
@@ -93,6 +106,25 @@ public class UserServiceImpl implements UserService {
 		List<Integer> roles = userDTO.getRoles().stream().map(role -> role.getId()).toList();
 		List<Role> rolesById = roleRepository.findAllById(roles);
 		user.setRole(rolesById);
+	}
+
+	@Override
+	public LoginResponse loginUser(LoginRequest loginRequest) {
+		Authentication authenticate = authenticationManager.authenticate(new UsernamePasswordAuthenticationToken(loginRequest.getEmail(), loginRequest.getPassword()));
+		
+		if(authenticate.isAuthenticated()) {
+			CustomUserDetails customUserDetails = (CustomUserDetails) authenticate.getPrincipal();
+			
+			String token = "dskjfajsfahfhjdafjdfkjjdfjdhsjfhjdfjskj";
+			
+			LoginResponse loginResponse = LoginResponse.builder()
+					.user(customUserDetails.getUser())
+					.token(token).build();
+			
+			return loginResponse;
+		}
+		
+		return null;
 	}
 
 }
