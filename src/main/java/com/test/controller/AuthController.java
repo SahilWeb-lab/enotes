@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.test.dto.LoginRequest;
 import com.test.dto.LoginResponse;
-import com.test.dto.UserDTO;
+import com.test.dto.UserRequest;
 import com.test.service.UserService;
 import com.test.util.CommonUtils;
 
@@ -25,7 +25,7 @@ public class AuthController {
 	private UserService userService;
 	
 	@PostMapping("/save")
-	public ResponseEntity<?> registerUser(@RequestBody UserDTO userDTO, HttpServletRequest request) throws Exception {
+	public ResponseEntity<?> registerUser(@RequestBody UserRequest userDTO, HttpServletRequest request) throws Exception {
 		String url = CommonUtils.getUrl(request);
 		Boolean status = userService.registerUser(userDTO, url);
 		

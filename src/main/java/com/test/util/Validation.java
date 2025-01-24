@@ -13,7 +13,7 @@ import org.springframework.util.StringUtils;
 import com.test.dto.CategoryDTO;
 import com.test.dto.NotesDTO;
 import com.test.dto.TodoDTO;
-import com.test.dto.UserDTO;
+import com.test.dto.UserRequest;
 import com.test.dto.TodoDTO.StatusDTO;
 import com.test.enums.TodoStatus;
 import com.test.exception.ExistDataException;
@@ -134,7 +134,7 @@ public class Validation {
 	
 	
 //	Create a method for validating user:
-	public void userValidation(UserDTO userDTO) {
+	public void userValidation(UserRequest userDTO) {
 		
 		if(!StringUtils.hasText(userDTO.getFirstName())) {
 			throw new IllegalArgumentException("First name can't be null!");
