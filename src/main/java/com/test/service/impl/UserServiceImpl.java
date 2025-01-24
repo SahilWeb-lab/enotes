@@ -16,7 +16,7 @@ import com.test.config.CustomUserDetails;
 import com.test.dto.EmailRequest;
 import com.test.dto.LoginRequest;
 import com.test.dto.LoginResponse;
-import com.test.dto.UserDTO;
+import com.test.dto.UserRequest;
 import com.test.model.AccountStatus;
 import com.test.model.Role;
 import com.test.model.User;
@@ -55,7 +55,7 @@ public class UserServiceImpl implements UserService {
 	private JwtService jwtService;
 	
 	@Override
-	public Boolean registerUser(UserDTO userDTO, String url) throws Exception {
+	public Boolean registerUser(UserRequest userDTO, String url) throws Exception {
 		
 //		Call the method to validate user:
 		validation.userValidation(userDTO);
@@ -106,7 +106,7 @@ public class UserServiceImpl implements UserService {
 		emailService.send(request);
 	}
 
-	private void setRole(UserDTO userDTO, User user) {
+	private void setRole(UserRequest userDTO, User user) {
 		List<Integer> roles = userDTO.getRoles().stream().map(role -> role.getId()).toList();
 		List<Role> rolesById = roleRepository.findAllById(roles);
 		user.setRole(rolesById);

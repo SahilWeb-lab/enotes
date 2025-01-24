@@ -44,6 +44,7 @@ import com.test.repository.FavouriteNoteRepository;
 import com.test.repository.FileRepository;
 import com.test.repository.NotesRepository;
 import com.test.service.NotesService;
+import com.test.util.CommonUtils;
 import com.test.util.Validation;
 
 @Service
@@ -211,7 +212,8 @@ public class NotesServiceImpl implements NotesService {
 	}
 
 	@Override
-	public NotesResponse getAllNotesByUser(Integer userId, Integer pageNo, Integer pageSize) {
+	public NotesResponse getAllNotesByUser(Integer pageNo, Integer pageSize) {
+		Integer userId = CommonUtils.getLoggedInUser().getId();
 		Pageable pageable = PageRequest.of(pageNo, pageSize);
 		Page<Notes> notes = notesRepository.findByCreatedByAndIsDeletedFalse(userId, pageable);
 
@@ -241,7 +243,8 @@ public class NotesServiceImpl implements NotesService {
 	}
 
 	@Override
-	public List<NotesDTO> getUserRecycleBinNotes(Integer userId) {
+	public List<NotesDTO> getUserRecycleBinNotes() {
+		Integer userId = CommonUtils.getLoggedInUser().getId();
 		List<Notes> notes = notesRepository.findByCreatedByAndIsDeletedTrue(userId);
 		List<NotesDTO> notesDTO = notes.stream().map(note -> modelMapper.map(note, NotesDTO.class)).toList();
 		return notesDTO;
@@ -262,7 +265,8 @@ public class NotesServiceImpl implements NotesService {
 	}
 
 	@Override
-	public void emptyRecycleBin(Integer userId) {
+	public void emptyRecycleBin() {
+		Integer userId = CommonUtils.getLoggedInUser().getId();
 		List<Notes> notes = notesRepository.findByCreatedByAndIsDeletedTrue(userId);
 		
 		if(!CollectionUtils.isEmpty(notes)) {

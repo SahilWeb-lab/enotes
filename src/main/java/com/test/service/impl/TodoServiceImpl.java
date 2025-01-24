@@ -14,6 +14,7 @@ import com.test.exception.ResourceNotFoundException;
 import com.test.model.Todo;
 import com.test.repository.TodoRepository;
 import com.test.service.TodoService;
+import com.test.util.CommonUtils;
 import com.test.util.Validation;
 
 @Service
@@ -74,7 +75,7 @@ public class TodoServiceImpl implements TodoService {
 
 	@Override
 	public List<TodoDTO> getTodoByUser() {
-		Integer userId = 2;
+		Integer userId = CommonUtils.getLoggedInUser().getId();
 		
 		List<Todo> todos = todoRepository.findByCreatedBy(userId);
 		

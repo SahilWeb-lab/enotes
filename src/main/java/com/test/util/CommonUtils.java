@@ -4,8 +4,12 @@ import org.apache.commons.io.FilenameUtils;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.core.context.SecurityContextHolder;
 
+import com.test.config.CustomUserDetails;
+import com.test.dto.UserResponse;
 import com.test.handle.GenericResponse;
+import com.test.model.User;
 
 import jakarta.servlet.http.HttpServletRequest;
 
@@ -65,5 +69,13 @@ public class CommonUtils {
 		String servletPath = request.getServletPath();
 		String url = siteUrl.replace(servletPath, "");
 		return url;
+	}
+	
+//	Create a method to get logged in user:
+	public static User getLoggedInUser() {
+		
+		CustomUserDetails loggedUser = (CustomUserDetails)SecurityContextHolder.getContext().getAuthentication().getPrincipal();
+		
+		return loggedUser.getUser();
 	}
 }
