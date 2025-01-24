@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.RestController;
 import com.test.dto.LoginRequest;
 import com.test.dto.LoginResponse;
 import com.test.dto.UserRequest;
-import com.test.service.UserService;
+import com.test.service.AuthService;
 import com.test.util.CommonUtils;
 
 import jakarta.servlet.http.HttpServletRequest;
@@ -22,7 +22,7 @@ import jakarta.servlet.http.HttpServletRequest;
 public class AuthController {
 
 	@Autowired
-	private UserService userService;
+	private AuthService userService;
 	
 	@PostMapping("/save")
 	public ResponseEntity<?> registerUser(@RequestBody UserRequest userDTO, HttpServletRequest request) throws Exception {

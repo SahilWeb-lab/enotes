@@ -1,15 +1,8 @@
 package com.test.service;
 
-import com.test.dto.LoginRequest;
-import com.test.dto.LoginResponse;
-import com.test.dto.UserRequest;
-import com.test.model.User;
+import com.test.dto.PasswordChangeRequest;
 
 public interface UserService {
-	
-//	Create a method to register the user:
-	public Boolean registerUser(UserRequest userDTO, String url) throws Exception;
-	
-	public LoginResponse loginUser(LoginRequest loginRequest);
-	
+//	Create a method to change the password:
+	public void changePassword(PasswordChangeRequest passwordChangeRequest);
 }

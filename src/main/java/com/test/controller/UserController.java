@@ -6,11 +6,15 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.util.ObjectUtils;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.test.dto.PasswordChangeRequest;
 import com.test.dto.UserResponse;
 import com.test.model.User;
+import com.test.service.UserService;
 import com.test.util.CommonUtils;
 
 @RestController
@@ -19,6 +23,9 @@ public class UserController {
 	
 	@Autowired
 	private ModelMapper modelMapper;
+	
+	@Autowired
+	private UserService userService;
 
 	@GetMapping("/profile")
 	public ResponseEntity<?> userProfile() {
@@ -30,6 +37,12 @@ public class UserController {
 		}
 		
 		return CommonUtils.createBuildResponse(null, HttpStatus.INTERNAL_SERVER_ERROR);
+	}
+	
+	@PostMapping("/change-password")
+	public ResponseEntity<?> changePassword(@RequestBody PasswordChangeRequest changeRequest) {
+		userService.changePassword(changeRequest);
+		return CommonUtils.createBuildResponseMessage("Password changed successfully!", HttpStatus.OK);
 	}
  	
 }
