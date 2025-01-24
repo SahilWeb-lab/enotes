@@ -8,6 +8,7 @@ import java.io.FileNotFoundException;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.http.converter.HttpMessageNotReadableException;
+import org.springframework.security.access.AccessDeniedException;
 import org.springframework.security.authentication.BadCredentialsException;
 import org.springframework.validation.FieldError;
 import org.springframework.validation.ObjectError;
@@ -95,6 +96,12 @@ public class GlobalExceptionHandler {
 	@ExceptionHandler(exception = BadCredentialsException.class)
 	public ResponseEntity<?> handleBadCredentialsException(BadCredentialsException exception) {
 		return CommonUtils.createErrorResponseMessage(exception.getMessage(), HttpStatus.BAD_REQUEST);
+
+	}
+	
+	@ExceptionHandler(exception = AccessDeniedException.class)
+	public ResponseEntity<?> handleAccessDeniedException(AccessDeniedException exception) {
+		return CommonUtils.createErrorResponseMessage(exception.getMessage(), HttpStatus.FORBIDDEN);
 
 	}
 	

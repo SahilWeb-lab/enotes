@@ -5,6 +5,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.util.CollectionUtils;
 import org.springframework.util.ObjectUtils;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -31,6 +32,7 @@ public class CategoryController {
 	private CategoryService categoryService;
 	
 	@PostMapping("/save-category")
+	@PreAuthorize("hasRole('ADMIN')")
 	public ResponseEntity<?> saveCategory(@RequestBody CategoryDTO category) {
 		Boolean saveCategory = categoryService.saveCategory(category);
 		
@@ -44,6 +46,7 @@ public class CategoryController {
 	}
 	
 	@GetMapping("/categories")
+	@PreAuthorize("hasRole('ADMIN')")
 	public ResponseEntity<?> getAllCategories() {
 		List<CategoryDTO> allCategories = categoryService.getAllCategories();
 		
@@ -59,6 +62,7 @@ public class CategoryController {
 	
 //	Create a handler to show active categories:
 	@GetMapping("/active-categories")
+	@PreAuthorize("hasAnyRole('USER', 'ADMIN')")
 	public ResponseEntity<?> getActiveCategories() {
 List<CategoryResponse> allCategories = categoryService.getActiveCategories();
 		
@@ -72,6 +76,7 @@ List<CategoryResponse> allCategories = categoryService.getActiveCategories();
 	
 //	Create a handler to get category by id:
 	@GetMapping("/{id}")
+	@PreAuthorize("hasRole('ADMIN')")
 	public ResponseEntity<?> getCategoryById(@PathVariable Integer id) throws Exception {
 		CategoryDTO categoryById = categoryService.getCategoryById(id);
 		
@@ -87,6 +92,7 @@ List<CategoryResponse> allCategories = categoryService.getActiveCategories();
 	
 //	Create a handler to delete the category by id:
 	@DeleteMapping("/{id}")
+	@PreAuthorize("hasRole('ADMIN')")
 	public ResponseEntity<?> deleteCategory(@PathVariable Integer id) {
 		Boolean deleteCategory = categoryService.deleteCategory(id);
 		
