@@ -25,6 +25,9 @@ public interface NotesService {
 	public FileDetails getFileDetails(Integer id) throws Exception;
 	
 	public NotesResponse getAllNotesByUser(Integer pageNo, Integer pageSize);
+	
+//	Create a method to search notes by user:
+	public NotesResponse searchNotesByUser(Integer pageNo, Integer pageSize, String keyword);
 
 	public void softDeleteNotes(Integer id) throws Exception;
 

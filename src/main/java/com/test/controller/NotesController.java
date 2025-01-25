@@ -167,4 +167,16 @@ public class NotesController {
 		return CommonUtils.createBuildResponseMessage("Failed to copy!", HttpStatus.INTERNAL_SERVER_ERROR);
 	}
 	
+//	Create a handler to search the notes:
+	@GetMapping("/search-notes")
+	@PreAuthorize("hasRole('USER')")
+	public ResponseEntity<?> searchNotes(
+			@RequestParam(name = "keyword", defaultValue = "") String keyword,
+			@RequestParam(name = "pageNo", defaultValue = "0") Integer pageNo,
+			@RequestParam(name = "pageSize", defaultValue = "10") Integer pageSize) {
+		
+		 NotesResponse notes = notesService.searchNotesByUser(pageNo, pageSize, keyword);
+		 return CommonUtils.createBuildResponse(notes, HttpStatus.OK);
+	}
+	
 }
