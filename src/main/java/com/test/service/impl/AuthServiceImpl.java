@@ -114,7 +114,15 @@ public class AuthServiceImpl implements AuthService {
 	}
 
 	@Override
-	public LoginResponse loginUser(LoginRequest loginRequest) {
+	public LoginResponse loginUser(LoginRequest loginRequest) throws Exception {
+		
+		String email = loginRequest.getEmail();
+		User user = userRepository.findByEmail(email);
+		
+		if(!user.getStatus().getIsActive()) {
+		 throw new IllegalArgumentException("Your account is not verified! Please verify your account!");
+		}
+		
 		Authentication authenticate = authenticationManager.authenticate(new UsernamePasswordAuthenticationToken(loginRequest.getEmail(), loginRequest.getPassword()));
 		
 		if(authenticate.isAuthenticated()) {

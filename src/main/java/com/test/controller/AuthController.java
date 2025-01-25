@@ -36,7 +36,7 @@ public class AuthController {
 	}
 	
 	@PostMapping("/login")
-	public ResponseEntity<?> loginUser(@RequestBody LoginRequest loginRequest) {
+	public ResponseEntity<?> loginUser(@RequestBody LoginRequest loginRequest) throws Exception {
 		LoginResponse loginUser = userService.loginUser(loginRequest);
 		
 		if(ObjectUtils.isEmpty(loginUser)) {

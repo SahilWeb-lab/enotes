@@ -10,6 +10,6 @@ public interface AuthService {
 //	Create a method to register the user:
 	public Boolean registerUser(UserRequest userDTO, String url) throws Exception;
 	
-	public LoginResponse loginUser(LoginRequest loginRequest);
+	public LoginResponse loginUser(LoginRequest loginRequest) throws Exception;
 	
 }
