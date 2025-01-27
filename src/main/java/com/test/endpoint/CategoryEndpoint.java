@@ -8,6 +8,8 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import static com.test.util.Constants.ROLE_ADMIN;
+import static com.test.util.Constants.ROLE_USER_ADMIN;
 
 import com.test.dto.CategoryDTO;
 
@@ -15,23 +17,23 @@ import com.test.dto.CategoryDTO;
 public interface CategoryEndpoint {
 		
 	@PostMapping("/save-category")
-	@PreAuthorize("hasRole('ADMIN')")
+	@PreAuthorize(ROLE_ADMIN)
 	public ResponseEntity<?> saveCategory(@RequestBody CategoryDTO category);
 	
 	@GetMapping("/categories")
-	@PreAuthorize("hasRole('ADMIN')")
+	@PreAuthorize(ROLE_ADMIN)
 	public ResponseEntity<?> getAllCategories();
 	
 	@GetMapping("/active-categories")
-	@PreAuthorize("hasAnyRole('USER', 'ADMIN')")
+	@PreAuthorize(ROLE_USER_ADMIN)
 	public ResponseEntity<?> getActiveCategories();
 	
 	@GetMapping("/{id}")
-	@PreAuthorize("hasRole('ADMIN')")
+	@PreAuthorize(ROLE_ADMIN)
 	public ResponseEntity<?> getCategoryById(@PathVariable Integer id) throws Exception;
 	
 	@DeleteMapping("/{id}")
-	@PreAuthorize("hasRole('ADMIN')")
+	@PreAuthorize(ROLE_ADMIN)
 	public ResponseEntity<?> deleteCategory(@PathVariable Integer id);
 	
 }

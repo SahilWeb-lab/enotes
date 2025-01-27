@@ -38,7 +38,7 @@ public class NotesController implements NotesEndpoint {
 	private NotesService notesService;
 	
 	@Override
-	public ResponseEntity<?> saveNotes(@RequestParam String notes, @RequestParam(required = false) MultipartFile file) throws Exception {
+	public ResponseEntity<?> saveNotes(String notes, MultipartFile file) throws Exception {
 		log.info("NotesController : saveNotes() : Execution Start");
 		Boolean saveNotes = notesService.saveNotes(notes, file);
 		
@@ -62,7 +62,7 @@ public class NotesController implements NotesEndpoint {
 	}
 	
 	@Override
-	public ResponseEntity<?> downloadFile(@PathVariable Integer id) throws Exception {
+	public ResponseEntity<?> downloadFile(Integer id) throws Exception {
 		FileDetails fileDetails = notesService.getFileDetails(id);
 		byte[] data = notesService.downloadFile(fileDetails);
 		
@@ -76,10 +76,7 @@ public class NotesController implements NotesEndpoint {
 	}
 	
 	@Override
-	public ResponseEntity<?> getAllNotesByUser(
-				@RequestParam(name = "pageNo", defaultValue = "0") Integer pageNo,
-				@RequestParam(name = "pageSize", defaultValue = "10") Integer pageSize
-			) {
+	public ResponseEntity<?> getAllNotesByUser(Integer pageNo, Integer pageSize) {
 		NotesResponse allNotesByUser = notesService.getAllNotesByUser(pageNo, pageSize);
 		
 		return CommonUtils.createBuildResponse(allNotesByUser, HttpStatus.OK);
@@ -87,13 +84,13 @@ public class NotesController implements NotesEndpoint {
 	
 	
 	@Override
-	public ResponseEntity<?> deleteNotes(@PathVariable Integer id) throws Exception {
+	public ResponseEntity<?> deleteNotes(Integer id) throws Exception {
 		notesService.softDeleteNotes(id);
 		return CommonUtils.createBuildResponseMessage("Notes deleted successfully!", HttpStatus.OK);
 	}
 	
 	@Override
-	public ResponseEntity<?> restoreNotes(@PathVariable Integer id) throws Exception {
+	public ResponseEntity<?> restoreNotes(Integer id) throws Exception {
 		notesService.restoreNotes(id);
 		return CommonUtils.createBuildResponseMessage("Notes restored successfully!", HttpStatus.OK);
 	}
@@ -111,7 +108,7 @@ public class NotesController implements NotesEndpoint {
 	}
 	
 	@Override
-	public ResponseEntity<?> hardDeleteNotes(@PathVariable Integer id) throws Exception {
+	public ResponseEntity<?> hardDeleteNotes(Integer id) throws Exception {
 		notesService.hardDelete(id);
 		return CommonUtils.createBuildResponseMessage("Notes deleted successfully!", HttpStatus.OK);
 	}
@@ -126,13 +123,13 @@ public class NotesController implements NotesEndpoint {
 	}
 	
 	@Override
-	public ResponseEntity<?> addFavourite(@PathVariable Integer noteId) throws Exception {
+	public ResponseEntity<?> addFavourite(Integer noteId) throws Exception {
 		notesService.favouriteNotes(noteId);
 		return CommonUtils.createBuildResponseMessage("Notes added to favourite!", HttpStatus.OK);
 	}
 	
 	@Override
-	public ResponseEntity<?> removeFavourite(@PathVariable Integer favNoteId) throws Exception {
+	public ResponseEntity<?> removeFavourite(Integer favNoteId) throws Exception {
 		notesService.unFavouriteNotes(favNoteId);
 		return CommonUtils.createBuildResponseMessage("Notes removed from favourite!", HttpStatus.OK);
 	}
@@ -149,7 +146,7 @@ public class NotesController implements NotesEndpoint {
 	}
 	
 	@Override
-	public ResponseEntity<?> copyNotes(@PathVariable Integer noteId) throws Exception {
+	public ResponseEntity<?> copyNotes(Integer noteId) throws Exception {
 		Boolean copyNotes = notesService.copyNotes(noteId);
 		
 		if(copyNotes) {			
@@ -161,10 +158,7 @@ public class NotesController implements NotesEndpoint {
 	
 //	Create a handler to search the notes:
 	@Override
-	public ResponseEntity<?> searchNotes(
-			@RequestParam(name = "keyword", defaultValue = "") String keyword,
-			@RequestParam(name = "pageNo", defaultValue = "0") Integer pageNo,
-			@RequestParam(name = "pageSize", defaultValue = "10") Integer pageSize) {
+	public ResponseEntity<?> searchNotes(String keyword, Integer pageNo, Integer pageSize) {
 		
 		 NotesResponse notes = notesService.searchNotesByUser(pageNo, pageSize, keyword);
 		 return CommonUtils.createBuildResponse(notes, HttpStatus.OK);

@@ -47,3 +47,776 @@
 2025-01-27 11:58:51.379 INFO  [http-nio-8080-exec-5] c.test.service.impl.NotesServiceImpl - Message : Notes dummy notes! already exists!
 2025-01-27 11:58:51.396 ERROR [http-nio-8080-exec-5] c.t.exception.GlobalExceptionHandler - GlobalExceptionHandler : ExistDataException() : Notes [dummy notes!] already exists!
 2025-01-27 11:58:51.413 WARN  [http-nio-8080-exec-5] o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [com.test.exception.ExistDataException: Notes [dummy notes!] already exists!]
+2025-01-27 12:57:44.504 INFO  [background-preinit] o.h.validator.internal.util.Version - HV000001: Hibernate Validator 8.0.2.Final
+2025-01-27 12:57:44.899 INFO  [restartedMain] c.test.EnotesApiServiceApplication - Starting EnotesApiServiceApplication using Java 21.0.3 with PID 13692 (E:\Spring Boot API\enotes\target\classes started by user in E:\Spring Boot API\enotes)
+2025-01-27 12:57:44.900 INFO  [restartedMain] c.test.EnotesApiServiceApplication - The following 1 profile is active: "dev"
+2025-01-27 12:57:45.067 INFO  [restartedMain] o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2025-01-27 12:57:45.068 INFO  [restartedMain] o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2025-01-27 12:57:52.165 INFO  [restartedMain] o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-01-27 12:57:52.749 INFO  [restartedMain] o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 551 ms. Found 7 JPA repository interfaces.
+2025-01-27 12:57:57.535 INFO  [restartedMain] o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
+2025-01-27 12:57:57.603 INFO  [restartedMain] o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2025-01-27 12:57:57.606 INFO  [restartedMain] o.a.catalina.core.StandardService - Starting service [Tomcat]
+2025-01-27 12:57:57.606 INFO  [restartedMain] o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.34]
+2025-01-27 12:57:58.111 INFO  [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2025-01-27 12:57:58.113 INFO  [restartedMain] o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 13032 ms
+2025-01-27 12:57:59.439 INFO  [restartedMain] o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-01-27 12:57:59.849 INFO  [restartedMain] org.hibernate.Version - HHH000412: Hibernate ORM core version 6.6.4.Final
+2025-01-27 12:57:59.992 INFO  [restartedMain] o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2025-01-27 12:58:01.225 INFO  [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-01-27 12:58:01.309 INFO  [restartedMain] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2025-01-27 12:58:02.527 INFO  [restartedMain] com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@59fcd62
+2025-01-27 12:58:02.532 INFO  [restartedMain] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2025-01-27 12:58:02.595 WARN  [restartedMain] org.hibernate.orm.deprecation - HHH90000025: MySQL8Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-01-27 12:58:02.598 WARN  [restartedMain] org.hibernate.orm.deprecation - HHH90000026: MySQL8Dialect has been deprecated; use org.hibernate.dialect.MySQLDialect instead
+2025-01-27 12:58:02.680 INFO  [restartedMain] o.hibernate.orm.connections.pooling - HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 8.0
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-01-27 12:58:06.329 INFO  [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-01-27 12:58:06.339 INFO  [restartedMain] o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-01-27 12:58:07.986 INFO  [restartedMain] o.s.s.c.a.a.c.InitializeAuthenticationProviderBeanManagerConfigurer$InitializeAuthenticationProviderManagerConfigurer - Global AuthenticationManager configured with AuthenticationProvider bean with name getDaoAuthenticationProvider
+2025-01-27 12:58:07.986 WARN  [restartedMain] o.s.s.c.a.a.c.InitializeUserDetailsBeanManagerConfigurer$InitializeUserDetailsManagerConfigurer - Global AuthenticationManager configured with an AuthenticationProvider bean. UserDetailsService beans will not be used by Spring Security for automatically configuring username/password login. Consider removing the AuthenticationProvider bean. Alternatively, consider using the UserDetailsService in a manually instantiated DaoAuthenticationProvider. If the current configuration is intentional, to turn off this warning, increase the logging level of 'org.springframework.security.config.annotation.authentication.configuration.InitializeUserDetailsBeanManagerConfigurer' to ERROR
+2025-01-27 12:58:08.304 INFO  [restartedMain] o.s.d.j.r.query.QueryEnhancerFactory - Hibernate is in classpath; If applicable, HQL parser will be used.
+2025-01-27 12:58:17.743 WARN  [restartedMain] o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-01-27 12:58:19.912 INFO  [restartedMain] o.s.b.d.a.OptionalLiveReloadServer - LiveReload server is running on port 35729
+2025-01-27 12:58:19.963 INFO  [restartedMain] o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2025-01-27 12:58:20.023 INFO  [restartedMain] o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8080 (http) with context path '/'
+2025-01-27 12:58:20.071 INFO  [restartedMain] c.test.EnotesApiServiceApplication - Started EnotesApiServiceApplication in 37.362 seconds (process running for 47.815)
+2025-01-27 12:58:39.114 INFO  [http-nio-8080-exec-2] o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-01-27 12:58:39.124 INFO  [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2025-01-27 12:58:39.127 INFO  [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet - Completed initialization in 3 ms
+2025-01-27 12:58:40.374 INFO  [http-nio-8080-exec-2] com.test.controller.AuthController - AuthController : loginUser() : Execution Start
+2025-01-27 12:58:40.375 INFO  [http-nio-8080-exec-2] c.test.service.impl.AuthServiceImpl - AuthServiceImpl : loginUser() : Execution Start
+2025-01-27 12:58:46.605 INFO  [http-nio-8080-exec-2] c.test.service.impl.AuthServiceImpl - Message : User logged in successfully!
+2025-01-27 12:58:46.605 INFO  [http-nio-8080-exec-2] c.test.service.impl.AuthServiceImpl - AuthServiceImpl : loginUser() : Execution End
+2025-01-27 12:58:46.605 INFO  [http-nio-8080-exec-2] com.test.controller.AuthController - AuthController : loginUser() : Execution End
+2025-01-27 12:59:15.171 INFO  [File Watcher] o.s.b.d.a.LocalDevToolsAutoConfiguration$RestartingClassPathChangeChangedEventListener - Restarting due to 1 class path change (0 additions, 0 deletions, 1 modification)
+2025-01-27 12:59:15.444 INFO  [Thread-5] o.s.b.w.e.tomcat.GracefulShutdown - Commencing graceful shutdown. Waiting for active requests to complete
+2025-01-27 12:59:15.458 INFO  [tomcat-shutdown] o.a.coyote.http11.Http11NioProtocol - Pausing ProtocolHandler ["http-nio-8080"]
+2025-01-27 12:59:15.525 INFO  [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown - Graceful shutdown complete
+2025-01-27 12:59:15.538 INFO  [Thread-5] o.a.coyote.http11.Http11NioProtocol - Stopping ProtocolHandler ["http-nio-8080"]
+2025-01-27 12:59:15.758 INFO  [Thread-5] o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-01-27 12:59:15.901 INFO  [Thread-5] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2025-01-27 12:59:16.148 INFO  [Thread-5] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2025-01-27 12:59:18.174 INFO  [restartedMain] c.test.EnotesApiServiceApplication - Starting EnotesApiServiceApplication using Java 21.0.3 with PID 13692 (E:\Spring Boot API\enotes\target\classes started by user in E:\Spring Boot API\enotes)
+2025-01-27 12:59:18.175 INFO  [restartedMain] c.test.EnotesApiServiceApplication - The following 1 profile is active: "dev"
+2025-01-27 12:59:20.935 INFO  [restartedMain] o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-01-27 12:59:21.022 INFO  [restartedMain] o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 83 ms. Found 7 JPA repository interfaces.
+2025-01-27 12:59:21.548 INFO  [restartedMain] o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
+2025-01-27 12:59:21.550 INFO  [restartedMain] o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2025-01-27 12:59:21.551 INFO  [restartedMain] o.a.catalina.core.StandardService - Starting service [Tomcat]
+2025-01-27 12:59:21.551 INFO  [restartedMain] o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.34]
+2025-01-27 12:59:21.600 INFO  [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2025-01-27 12:59:21.600 INFO  [restartedMain] o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 3420 ms
+2025-01-27 12:59:21.816 INFO  [restartedMain] o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-01-27 12:59:21.823 INFO  [restartedMain] o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2025-01-27 12:59:21.866 INFO  [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-01-27 12:59:21.869 INFO  [restartedMain] com.zaxxer.hikari.HikariDataSource - HikariPool-2 - Starting...
+2025-01-27 12:59:21.883 INFO  [restartedMain] com.zaxxer.hikari.pool.HikariPool - HikariPool-2 - Added connection com.mysql.cj.jdbc.ConnectionImpl@69ed765c
+2025-01-27 12:59:21.885 INFO  [restartedMain] com.zaxxer.hikari.HikariDataSource - HikariPool-2 - Start completed.
+2025-01-27 12:59:21.887 WARN  [restartedMain] org.hibernate.orm.deprecation - HHH90000025: MySQL8Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-01-27 12:59:21.888 WARN  [restartedMain] org.hibernate.orm.deprecation - HHH90000026: MySQL8Dialect has been deprecated; use org.hibernate.dialect.MySQLDialect instead
+2025-01-27 12:59:21.889 INFO  [restartedMain] o.hibernate.orm.connections.pooling - HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-2)']
+	Database driver: undefined/unknown
+	Database version: 8.0
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-01-27 12:59:22.758 INFO  [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-01-27 12:59:22.759 INFO  [restartedMain] o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-01-27 12:59:23.084 INFO  [restartedMain] o.s.s.c.a.a.c.InitializeAuthenticationProviderBeanManagerConfigurer$InitializeAuthenticationProviderManagerConfigurer - Global AuthenticationManager configured with AuthenticationProvider bean with name getDaoAuthenticationProvider
+2025-01-27 12:59:23.085 WARN  [restartedMain] o.s.s.c.a.a.c.InitializeUserDetailsBeanManagerConfigurer$InitializeUserDetailsManagerConfigurer - Global AuthenticationManager configured with an AuthenticationProvider bean. UserDetailsService beans will not be used by Spring Security for automatically configuring username/password login. Consider removing the AuthenticationProvider bean. Alternatively, consider using the UserDetailsService in a manually instantiated DaoAuthenticationProvider. If the current configuration is intentional, to turn off this warning, increase the logging level of 'org.springframework.security.config.annotation.authentication.configuration.InitializeUserDetailsBeanManagerConfigurer' to ERROR
+2025-01-27 12:59:23.418 WARN  [restartedMain] o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-01-27 12:59:24.220 INFO  [restartedMain] o.s.b.d.a.OptionalLiveReloadServer - LiveReload server is running on port 35729
+2025-01-27 12:59:24.244 INFO  [restartedMain] o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2025-01-27 12:59:24.253 INFO  [restartedMain] o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8080 (http) with context path '/'
+2025-01-27 12:59:24.265 INFO  [restartedMain] c.test.EnotesApiServiceApplication - Started EnotesApiServiceApplication in 6.763 seconds (process running for 112.009)
+2025-01-27 12:59:24.268 INFO  [restartedMain] o.s.b.d.a.ConditionEvaluationDeltaLoggingListener - Condition evaluation unchanged
+2025-01-27 12:59:46.978 INFO  [File Watcher] o.s.b.d.a.LocalDevToolsAutoConfiguration$RestartingClassPathChangeChangedEventListener - Restarting due to 1 class path change (0 additions, 0 deletions, 1 modification)
+2025-01-27 12:59:46.984 INFO  [Thread-7] o.s.b.w.e.tomcat.GracefulShutdown - Commencing graceful shutdown. Waiting for active requests to complete
+2025-01-27 12:59:46.987 INFO  [tomcat-shutdown] o.a.coyote.http11.Http11NioProtocol - Pausing ProtocolHandler ["http-nio-8080"]
+2025-01-27 12:59:47.021 INFO  [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown - Graceful shutdown complete
+2025-01-27 12:59:47.022 INFO  [Thread-7] o.a.coyote.http11.Http11NioProtocol - Stopping ProtocolHandler ["http-nio-8080"]
+2025-01-27 12:59:47.032 INFO  [Thread-7] o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-01-27 12:59:47.034 INFO  [Thread-7] com.zaxxer.hikari.HikariDataSource - HikariPool-2 - Shutdown initiated...
+2025-01-27 12:59:47.040 INFO  [Thread-7] com.zaxxer.hikari.HikariDataSource - HikariPool-2 - Shutdown completed.
+2025-01-27 12:59:47.499 INFO  [restartedMain] c.test.EnotesApiServiceApplication - Starting EnotesApiServiceApplication using Java 21.0.3 with PID 13692 (E:\Spring Boot API\enotes\target\classes started by user in E:\Spring Boot API\enotes)
+2025-01-27 12:59:47.499 INFO  [restartedMain] c.test.EnotesApiServiceApplication - The following 1 profile is active: "dev"
+2025-01-27 12:59:48.385 INFO  [restartedMain] o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-01-27 12:59:48.430 INFO  [restartedMain] o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 42 ms. Found 7 JPA repository interfaces.
+2025-01-27 12:59:48.656 INFO  [restartedMain] o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
+2025-01-27 12:59:48.662 INFO  [restartedMain] o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2025-01-27 12:59:48.665 INFO  [restartedMain] o.a.catalina.core.StandardService - Starting service [Tomcat]
+2025-01-27 12:59:48.667 INFO  [restartedMain] o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.34]
+2025-01-27 12:59:48.702 INFO  [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2025-01-27 12:59:48.702 INFO  [restartedMain] o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1193 ms
+2025-01-27 12:59:48.787 INFO  [restartedMain] o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-01-27 12:59:48.794 INFO  [restartedMain] o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2025-01-27 12:59:48.814 INFO  [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-01-27 12:59:48.817 INFO  [restartedMain] com.zaxxer.hikari.HikariDataSource - HikariPool-3 - Starting...
+2025-01-27 12:59:48.823 INFO  [restartedMain] com.zaxxer.hikari.pool.HikariPool - HikariPool-3 - Added connection com.mysql.cj.jdbc.ConnectionImpl@3c749218
+2025-01-27 12:59:48.823 INFO  [restartedMain] com.zaxxer.hikari.HikariDataSource - HikariPool-3 - Start completed.
+2025-01-27 12:59:48.824 WARN  [restartedMain] org.hibernate.orm.deprecation - HHH90000025: MySQL8Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-01-27 12:59:48.824 WARN  [restartedMain] org.hibernate.orm.deprecation - HHH90000026: MySQL8Dialect has been deprecated; use org.hibernate.dialect.MySQLDialect instead
+2025-01-27 12:59:48.824 INFO  [restartedMain] o.hibernate.orm.connections.pooling - HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-3)']
+	Database driver: undefined/unknown
+	Database version: 8.0
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-01-27 12:59:49.545 INFO  [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-01-27 12:59:49.546 INFO  [restartedMain] o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-01-27 12:59:49.820 INFO  [restartedMain] o.s.s.c.a.a.c.InitializeAuthenticationProviderBeanManagerConfigurer$InitializeAuthenticationProviderManagerConfigurer - Global AuthenticationManager configured with AuthenticationProvider bean with name getDaoAuthenticationProvider
+2025-01-27 12:59:49.822 WARN  [restartedMain] o.s.s.c.a.a.c.InitializeUserDetailsBeanManagerConfigurer$InitializeUserDetailsManagerConfigurer - Global AuthenticationManager configured with an AuthenticationProvider bean. UserDetailsService beans will not be used by Spring Security for automatically configuring username/password login. Consider removing the AuthenticationProvider bean. Alternatively, consider using the UserDetailsService in a manually instantiated DaoAuthenticationProvider. If the current configuration is intentional, to turn off this warning, increase the logging level of 'org.springframework.security.config.annotation.authentication.configuration.InitializeUserDetailsBeanManagerConfigurer' to ERROR
+2025-01-27 12:59:50.304 WARN  [restartedMain] o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-01-27 12:59:51.025 INFO  [restartedMain] o.s.b.d.a.OptionalLiveReloadServer - LiveReload server is running on port 35729
+2025-01-27 12:59:51.074 INFO  [restartedMain] o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2025-01-27 12:59:51.089 INFO  [restartedMain] o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8080 (http) with context path '/'
+2025-01-27 12:59:51.102 INFO  [restartedMain] c.test.EnotesApiServiceApplication - Started EnotesApiServiceApplication in 3.684 seconds (process running for 138.846)
+2025-01-27 12:59:51.109 INFO  [restartedMain] o.s.b.d.a.ConditionEvaluationDeltaLoggingListener - Condition evaluation unchanged
+2025-01-27 13:00:34.554 INFO  [File Watcher] o.s.b.d.a.LocalDevToolsAutoConfiguration$RestartingClassPathChangeChangedEventListener - Restarting due to 1 class path change (0 additions, 0 deletions, 1 modification)
+2025-01-27 13:00:34.760 INFO  [Thread-11] o.s.b.w.e.tomcat.GracefulShutdown - Commencing graceful shutdown. Waiting for active requests to complete
+2025-01-27 13:00:34.778 INFO  [tomcat-shutdown] o.a.coyote.http11.Http11NioProtocol - Pausing ProtocolHandler ["http-nio-8080"]
+2025-01-27 13:00:34.812 INFO  [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown - Graceful shutdown complete
+2025-01-27 13:00:34.830 INFO  [Thread-11] o.a.coyote.http11.Http11NioProtocol - Stopping ProtocolHandler ["http-nio-8080"]
+2025-01-27 13:00:34.874 INFO  [Thread-11] o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-01-27 13:00:34.943 INFO  [Thread-11] com.zaxxer.hikari.HikariDataSource - HikariPool-3 - Shutdown initiated...
+2025-01-27 13:00:35.026 INFO  [Thread-11] com.zaxxer.hikari.HikariDataSource - HikariPool-3 - Shutdown completed.
+2025-01-27 13:00:37.769 INFO  [restartedMain] c.test.EnotesApiServiceApplication - Starting EnotesApiServiceApplication using Java 21.0.3 with PID 13692 (E:\Spring Boot API\enotes\target\classes started by user in E:\Spring Boot API\enotes)
+2025-01-27 13:00:37.770 INFO  [restartedMain] c.test.EnotesApiServiceApplication - The following 1 profile is active: "dev"
+2025-01-27 13:00:40.284 INFO  [restartedMain] o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-01-27 13:00:40.430 INFO  [restartedMain] o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 140 ms. Found 7 JPA repository interfaces.
+2025-01-27 13:00:41.237 INFO  [restartedMain] o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
+2025-01-27 13:00:41.248 INFO  [restartedMain] o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2025-01-27 13:00:41.249 INFO  [restartedMain] o.a.catalina.core.StandardService - Starting service [Tomcat]
+2025-01-27 13:00:41.250 INFO  [restartedMain] o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.34]
+2025-01-27 13:00:41.347 INFO  [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2025-01-27 13:00:41.348 INFO  [restartedMain] o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 3573 ms
+2025-01-27 13:00:42.052 INFO  [restartedMain] o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-01-27 13:00:42.063 INFO  [restartedMain] o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2025-01-27 13:00:42.135 INFO  [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-01-27 13:00:42.138 INFO  [restartedMain] com.zaxxer.hikari.HikariDataSource - HikariPool-4 - Starting...
+2025-01-27 13:00:42.173 INFO  [restartedMain] com.zaxxer.hikari.pool.HikariPool - HikariPool-4 - Added connection com.mysql.cj.jdbc.ConnectionImpl@7b4a8273
+2025-01-27 13:00:42.174 INFO  [restartedMain] com.zaxxer.hikari.HikariDataSource - HikariPool-4 - Start completed.
+2025-01-27 13:00:42.176 WARN  [restartedMain] org.hibernate.orm.deprecation - HHH90000025: MySQL8Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-01-27 13:00:42.176 WARN  [restartedMain] org.hibernate.orm.deprecation - HHH90000026: MySQL8Dialect has been deprecated; use org.hibernate.dialect.MySQLDialect instead
+2025-01-27 13:00:42.178 INFO  [restartedMain] o.hibernate.orm.connections.pooling - HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-4)']
+	Database driver: undefined/unknown
+	Database version: 8.0
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-01-27 13:00:42.955 INFO  [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-01-27 13:00:42.955 INFO  [restartedMain] o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-01-27 13:00:43.503 INFO  [restartedMain] o.s.s.c.a.a.c.InitializeAuthenticationProviderBeanManagerConfigurer$InitializeAuthenticationProviderManagerConfigurer - Global AuthenticationManager configured with AuthenticationProvider bean with name getDaoAuthenticationProvider
+2025-01-27 13:00:43.503 WARN  [restartedMain] o.s.s.c.a.a.c.InitializeUserDetailsBeanManagerConfigurer$InitializeUserDetailsManagerConfigurer - Global AuthenticationManager configured with an AuthenticationProvider bean. UserDetailsService beans will not be used by Spring Security for automatically configuring username/password login. Consider removing the AuthenticationProvider bean. Alternatively, consider using the UserDetailsService in a manually instantiated DaoAuthenticationProvider. If the current configuration is intentional, to turn off this warning, increase the logging level of 'org.springframework.security.config.annotation.authentication.configuration.InitializeUserDetailsBeanManagerConfigurer' to ERROR
+2025-01-27 13:00:43.865 WARN  [restartedMain] o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-01-27 13:00:44.609 INFO  [restartedMain] o.s.b.d.a.OptionalLiveReloadServer - LiveReload server is running on port 35729
+2025-01-27 13:00:44.628 INFO  [restartedMain] o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2025-01-27 13:00:44.640 INFO  [restartedMain] o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8080 (http) with context path '/'
+2025-01-27 13:00:44.648 INFO  [restartedMain] c.test.EnotesApiServiceApplication - Started EnotesApiServiceApplication in 7.066 seconds (process running for 192.391)
+2025-01-27 13:00:44.650 INFO  [restartedMain] o.s.b.d.a.ConditionEvaluationDeltaLoggingListener - Condition evaluation unchanged
+2025-01-27 13:02:08.735 INFO  [File Watcher] o.s.b.d.a.LocalDevToolsAutoConfiguration$RestartingClassPathChangeChangedEventListener - Restarting due to 1 class path change (0 additions, 0 deletions, 1 modification)
+2025-01-27 13:02:10.182 INFO  [Thread-15] o.s.b.w.e.tomcat.GracefulShutdown - Commencing graceful shutdown. Waiting for active requests to complete
+2025-01-27 13:02:10.222 INFO  [tomcat-shutdown] o.a.coyote.http11.Http11NioProtocol - Pausing ProtocolHandler ["http-nio-8080"]
+2025-01-27 13:02:10.303 INFO  [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown - Graceful shutdown complete
+2025-01-27 13:02:10.324 INFO  [Thread-15] o.a.coyote.http11.Http11NioProtocol - Stopping ProtocolHandler ["http-nio-8080"]
+2025-01-27 13:02:10.421 INFO  [Thread-15] o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-01-27 13:02:10.499 INFO  [Thread-15] com.zaxxer.hikari.HikariDataSource - HikariPool-4 - Shutdown initiated...
+2025-01-27 13:02:10.568 INFO  [Thread-15] com.zaxxer.hikari.HikariDataSource - HikariPool-4 - Shutdown completed.
+2025-01-27 13:02:15.411 INFO  [restartedMain] c.test.EnotesApiServiceApplication - Starting EnotesApiServiceApplication using Java 21.0.3 with PID 13692 (E:\Spring Boot API\enotes\target\classes started by user in E:\Spring Boot API\enotes)
+2025-01-27 13:02:15.412 INFO  [restartedMain] c.test.EnotesApiServiceApplication - The following 1 profile is active: "dev"
+2025-01-27 13:02:18.085 INFO  [restartedMain] o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-01-27 13:02:18.175 INFO  [restartedMain] o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 86 ms. Found 7 JPA repository interfaces.
+2025-01-27 13:02:18.541 INFO  [restartedMain] o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
+2025-01-27 13:02:18.543 INFO  [restartedMain] o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2025-01-27 13:02:18.544 INFO  [restartedMain] o.a.catalina.core.StandardService - Starting service [Tomcat]
+2025-01-27 13:02:18.544 INFO  [restartedMain] o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.34]
+2025-01-27 13:02:18.586 INFO  [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2025-01-27 13:02:18.586 INFO  [restartedMain] o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 3166 ms
+2025-01-27 13:02:18.766 INFO  [restartedMain] o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-01-27 13:02:18.795 INFO  [restartedMain] o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2025-01-27 13:02:18.972 INFO  [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-01-27 13:02:18.979 INFO  [restartedMain] com.zaxxer.hikari.HikariDataSource - HikariPool-5 - Starting...
+2025-01-27 13:02:19.281 INFO  [restartedMain] com.zaxxer.hikari.pool.HikariPool - HikariPool-5 - Added connection com.mysql.cj.jdbc.ConnectionImpl@6540dfe4
+2025-01-27 13:02:19.282 INFO  [restartedMain] com.zaxxer.hikari.HikariDataSource - HikariPool-5 - Start completed.
+2025-01-27 13:02:19.294 WARN  [restartedMain] org.hibernate.orm.deprecation - HHH90000025: MySQL8Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-01-27 13:02:19.294 WARN  [restartedMain] org.hibernate.orm.deprecation - HHH90000026: MySQL8Dialect has been deprecated; use org.hibernate.dialect.MySQLDialect instead
+2025-01-27 13:02:19.297 INFO  [restartedMain] o.hibernate.orm.connections.pooling - HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-5)']
+	Database driver: undefined/unknown
+	Database version: 8.0
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-01-27 13:02:20.643 INFO  [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-01-27 13:02:20.644 INFO  [restartedMain] o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-01-27 13:02:20.935 INFO  [restartedMain] o.s.s.c.a.a.c.InitializeAuthenticationProviderBeanManagerConfigurer$InitializeAuthenticationProviderManagerConfigurer - Global AuthenticationManager configured with AuthenticationProvider bean with name getDaoAuthenticationProvider
+2025-01-27 13:02:20.939 WARN  [restartedMain] o.s.s.c.a.a.c.InitializeUserDetailsBeanManagerConfigurer$InitializeUserDetailsManagerConfigurer - Global AuthenticationManager configured with an AuthenticationProvider bean. UserDetailsService beans will not be used by Spring Security for automatically configuring username/password login. Consider removing the AuthenticationProvider bean. Alternatively, consider using the UserDetailsService in a manually instantiated DaoAuthenticationProvider. If the current configuration is intentional, to turn off this warning, increase the logging level of 'org.springframework.security.config.annotation.authentication.configuration.InitializeUserDetailsBeanManagerConfigurer' to ERROR
+2025-01-27 13:02:21.290 WARN  [restartedMain] o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-01-27 13:02:22.162 INFO  [restartedMain] o.s.b.d.a.OptionalLiveReloadServer - LiveReload server is running on port 35729
+2025-01-27 13:02:22.189 INFO  [restartedMain] o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2025-01-27 13:02:22.200 INFO  [restartedMain] o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8080 (http) with context path '/'
+2025-01-27 13:02:22.238 INFO  [restartedMain] c.test.EnotesApiServiceApplication - Started EnotesApiServiceApplication in 7.253 seconds (process running for 289.982)
+2025-01-27 13:02:22.241 INFO  [restartedMain] o.s.b.d.a.ConditionEvaluationDeltaLoggingListener - Condition evaluation unchanged
+2025-01-27 13:02:26.995 INFO  [File Watcher] o.s.b.d.a.LocalDevToolsAutoConfiguration$RestartingClassPathChangeChangedEventListener - Restarting due to 1 class path change (0 additions, 0 deletions, 1 modification)
+2025-01-27 13:02:27.004 INFO  [Thread-19] o.s.b.w.e.tomcat.GracefulShutdown - Commencing graceful shutdown. Waiting for active requests to complete
+2025-01-27 13:02:27.011 INFO  [tomcat-shutdown] o.a.coyote.http11.Http11NioProtocol - Pausing ProtocolHandler ["http-nio-8080"]
+2025-01-27 13:02:27.039 INFO  [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown - Graceful shutdown complete
+2025-01-27 13:02:27.040 INFO  [Thread-19] o.a.coyote.http11.Http11NioProtocol - Stopping ProtocolHandler ["http-nio-8080"]
+2025-01-27 13:02:27.049 INFO  [Thread-19] o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-01-27 13:02:27.052 INFO  [Thread-19] com.zaxxer.hikari.HikariDataSource - HikariPool-5 - Shutdown initiated...
+2025-01-27 13:02:27.156 INFO  [Thread-19] com.zaxxer.hikari.HikariDataSource - HikariPool-5 - Shutdown completed.
+2025-01-27 13:02:27.451 INFO  [restartedMain] c.test.EnotesApiServiceApplication - Starting EnotesApiServiceApplication using Java 21.0.3 with PID 13692 (E:\Spring Boot API\enotes\target\classes started by user in E:\Spring Boot API\enotes)
+2025-01-27 13:02:27.452 INFO  [restartedMain] c.test.EnotesApiServiceApplication - The following 1 profile is active: "dev"
+2025-01-27 13:02:27.998 INFO  [restartedMain] o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-01-27 13:02:28.042 INFO  [restartedMain] o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 39 ms. Found 7 JPA repository interfaces.
+2025-01-27 13:02:28.307 INFO  [restartedMain] o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
+2025-01-27 13:02:28.308 INFO  [restartedMain] o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2025-01-27 13:02:28.308 INFO  [restartedMain] o.a.catalina.core.StandardService - Starting service [Tomcat]
+2025-01-27 13:02:28.308 INFO  [restartedMain] o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.34]
+2025-01-27 13:02:28.340 INFO  [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2025-01-27 13:02:28.340 INFO  [restartedMain] o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 884 ms
+2025-01-27 13:02:28.430 INFO  [restartedMain] o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-01-27 13:02:28.434 INFO  [restartedMain] o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2025-01-27 13:02:28.451 INFO  [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-01-27 13:02:28.452 INFO  [restartedMain] com.zaxxer.hikari.HikariDataSource - HikariPool-6 - Starting...
+2025-01-27 13:02:28.457 INFO  [restartedMain] com.zaxxer.hikari.pool.HikariPool - HikariPool-6 - Added connection com.mysql.cj.jdbc.ConnectionImpl@77642089
+2025-01-27 13:02:28.457 INFO  [restartedMain] com.zaxxer.hikari.HikariDataSource - HikariPool-6 - Start completed.
+2025-01-27 13:02:28.458 WARN  [restartedMain] org.hibernate.orm.deprecation - HHH90000025: MySQL8Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-01-27 13:02:28.458 WARN  [restartedMain] org.hibernate.orm.deprecation - HHH90000026: MySQL8Dialect has been deprecated; use org.hibernate.dialect.MySQLDialect instead
+2025-01-27 13:02:28.459 INFO  [restartedMain] o.hibernate.orm.connections.pooling - HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-6)']
+	Database driver: undefined/unknown
+	Database version: 8.0
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-01-27 13:02:28.934 INFO  [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-01-27 13:02:28.935 INFO  [restartedMain] o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-01-27 13:02:29.464 INFO  [restartedMain] o.s.s.c.a.a.c.InitializeAuthenticationProviderBeanManagerConfigurer$InitializeAuthenticationProviderManagerConfigurer - Global AuthenticationManager configured with AuthenticationProvider bean with name getDaoAuthenticationProvider
+2025-01-27 13:02:29.465 WARN  [restartedMain] o.s.s.c.a.a.c.InitializeUserDetailsBeanManagerConfigurer$InitializeUserDetailsManagerConfigurer - Global AuthenticationManager configured with an AuthenticationProvider bean. UserDetailsService beans will not be used by Spring Security for automatically configuring username/password login. Consider removing the AuthenticationProvider bean. Alternatively, consider using the UserDetailsService in a manually instantiated DaoAuthenticationProvider. If the current configuration is intentional, to turn off this warning, increase the logging level of 'org.springframework.security.config.annotation.authentication.configuration.InitializeUserDetailsBeanManagerConfigurer' to ERROR
+2025-01-27 13:02:29.766 WARN  [restartedMain] o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-01-27 13:02:30.535 INFO  [restartedMain] o.s.b.d.a.OptionalLiveReloadServer - LiveReload server is running on port 35729
+2025-01-27 13:02:30.564 INFO  [restartedMain] o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2025-01-27 13:02:30.572 INFO  [restartedMain] o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8080 (http) with context path '/'
+2025-01-27 13:02:30.641 INFO  [restartedMain] c.test.EnotesApiServiceApplication - Started EnotesApiServiceApplication in 3.279 seconds (process running for 298.385)
+2025-01-27 13:02:30.644 INFO  [restartedMain] o.s.b.d.a.ConditionEvaluationDeltaLoggingListener - Condition evaluation unchanged
+2025-01-27 13:02:44.200 INFO  [File Watcher] o.s.b.d.a.LocalDevToolsAutoConfiguration$RestartingClassPathChangeChangedEventListener - Restarting due to 1 class path change (0 additions, 0 deletions, 1 modification)
+2025-01-27 13:02:44.407 INFO  [Thread-23] o.s.b.w.e.tomcat.GracefulShutdown - Commencing graceful shutdown. Waiting for active requests to complete
+2025-01-27 13:02:44.443 INFO  [tomcat-shutdown] o.a.coyote.http11.Http11NioProtocol - Pausing ProtocolHandler ["http-nio-8080"]
+2025-01-27 13:02:44.458 INFO  [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown - Graceful shutdown complete
+2025-01-27 13:02:44.463 INFO  [Thread-23] o.a.coyote.http11.Http11NioProtocol - Stopping ProtocolHandler ["http-nio-8080"]
+2025-01-27 13:02:44.506 INFO  [Thread-23] o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-01-27 13:02:44.571 INFO  [Thread-23] com.zaxxer.hikari.HikariDataSource - HikariPool-6 - Shutdown initiated...
+2025-01-27 13:02:44.608 INFO  [Thread-23] com.zaxxer.hikari.HikariDataSource - HikariPool-6 - Shutdown completed.
+2025-01-27 13:02:45.972 INFO  [restartedMain] c.test.EnotesApiServiceApplication - Starting EnotesApiServiceApplication using Java 21.0.3 with PID 13692 (E:\Spring Boot API\enotes\target\classes started by user in E:\Spring Boot API\enotes)
+2025-01-27 13:02:45.977 INFO  [restartedMain] c.test.EnotesApiServiceApplication - The following 1 profile is active: "dev"
+2025-01-27 13:02:47.780 INFO  [restartedMain] o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-01-27 13:02:48.376 INFO  [restartedMain] o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 588 ms. Found 7 JPA repository interfaces.
+2025-01-27 13:02:50.102 INFO  [restartedMain] o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
+2025-01-27 13:02:50.124 INFO  [restartedMain] o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2025-01-27 13:02:50.145 INFO  [restartedMain] o.a.catalina.core.StandardService - Starting service [Tomcat]
+2025-01-27 13:02:50.145 INFO  [restartedMain] o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.34]
+2025-01-27 13:02:50.284 INFO  [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2025-01-27 13:02:50.285 INFO  [restartedMain] o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 4124 ms
+2025-01-27 13:02:50.662 INFO  [restartedMain] o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-01-27 13:02:50.710 INFO  [restartedMain] o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2025-01-27 13:02:50.829 INFO  [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-01-27 13:02:50.842 INFO  [restartedMain] com.zaxxer.hikari.HikariDataSource - HikariPool-7 - Starting...
+2025-01-27 13:02:51.096 INFO  [restartedMain] com.zaxxer.hikari.pool.HikariPool - HikariPool-7 - Added connection com.mysql.cj.jdbc.ConnectionImpl@4a362070
+2025-01-27 13:02:51.100 INFO  [restartedMain] com.zaxxer.hikari.HikariDataSource - HikariPool-7 - Start completed.
+2025-01-27 13:02:51.106 WARN  [restartedMain] org.hibernate.orm.deprecation - HHH90000025: MySQL8Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-01-27 13:02:51.107 WARN  [restartedMain] org.hibernate.orm.deprecation - HHH90000026: MySQL8Dialect has been deprecated; use org.hibernate.dialect.MySQLDialect instead
+2025-01-27 13:02:51.110 INFO  [restartedMain] o.hibernate.orm.connections.pooling - HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-7)']
+	Database driver: undefined/unknown
+	Database version: 8.0
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-01-27 13:02:56.216 INFO  [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-01-27 13:02:56.219 INFO  [restartedMain] o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-01-27 13:02:58.373 INFO  [restartedMain] o.s.s.c.a.a.c.InitializeAuthenticationProviderBeanManagerConfigurer$InitializeAuthenticationProviderManagerConfigurer - Global AuthenticationManager configured with AuthenticationProvider bean with name getDaoAuthenticationProvider
+2025-01-27 13:02:58.377 WARN  [restartedMain] o.s.s.c.a.a.c.InitializeUserDetailsBeanManagerConfigurer$InitializeUserDetailsManagerConfigurer - Global AuthenticationManager configured with an AuthenticationProvider bean. UserDetailsService beans will not be used by Spring Security for automatically configuring username/password login. Consider removing the AuthenticationProvider bean. Alternatively, consider using the UserDetailsService in a manually instantiated DaoAuthenticationProvider. If the current configuration is intentional, to turn off this warning, increase the logging level of 'org.springframework.security.config.annotation.authentication.configuration.InitializeUserDetailsBeanManagerConfigurer' to ERROR
+2025-01-27 13:02:58.963 WARN  [restartedMain] o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-01-27 13:03:00.355 INFO  [restartedMain] o.s.b.d.a.OptionalLiveReloadServer - LiveReload server is running on port 35729
+2025-01-27 13:03:00.385 INFO  [restartedMain] o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2025-01-27 13:03:00.417 INFO  [restartedMain] o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8080 (http) with context path '/'
+2025-01-27 13:03:00.443 INFO  [restartedMain] c.test.EnotesApiServiceApplication - Started EnotesApiServiceApplication in 14.919 seconds (process running for 328.187)
+2025-01-27 13:03:00.446 INFO  [restartedMain] o.s.b.d.a.ConditionEvaluationDeltaLoggingListener - Condition evaluation unchanged
+2025-01-27 13:03:01.375 INFO  [http-nio-8080-exec-2] o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-01-27 13:03:01.375 INFO  [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2025-01-27 13:03:01.377 INFO  [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet - Completed initialization in 2 ms
+2025-01-27 13:03:01.417 INFO  [http-nio-8080-exec-2] com.test.controller.AuthController - AuthController : loginUser() : Execution Start
+2025-01-27 13:03:01.417 INFO  [http-nio-8080-exec-2] c.test.service.impl.AuthServiceImpl - AuthServiceImpl : loginUser() : Execution Start
+2025-01-27 13:03:02.061 INFO  [http-nio-8080-exec-2] c.test.service.impl.AuthServiceImpl - Message : User logged in successfully!
+2025-01-27 13:03:02.061 INFO  [http-nio-8080-exec-2] c.test.service.impl.AuthServiceImpl - AuthServiceImpl : loginUser() : Execution End
+2025-01-27 13:03:02.061 INFO  [http-nio-8080-exec-2] com.test.controller.AuthController - AuthController : loginUser() : Execution End
+2025-01-27 13:36:27.148 INFO  [http-nio-8080-exec-5] com.test.controller.AuthController - AuthController : loginUser() : Execution Start
+2025-01-27 13:36:27.169 INFO  [http-nio-8080-exec-5] c.test.service.impl.AuthServiceImpl - AuthServiceImpl : loginUser() : Execution Start
+2025-01-27 13:36:27.652 INFO  [http-nio-8080-exec-5] c.test.service.impl.AuthServiceImpl - Message : User logged in successfully!
+2025-01-27 13:36:27.652 INFO  [http-nio-8080-exec-5] c.test.service.impl.AuthServiceImpl - AuthServiceImpl : loginUser() : Execution End
+2025-01-27 13:36:27.652 INFO  [http-nio-8080-exec-5] com.test.controller.AuthController - AuthController : loginUser() : Execution End
+2025-01-27 13:39:08.162 INFO  [File Watcher] o.s.b.d.a.LocalDevToolsAutoConfiguration$RestartingClassPathChangeChangedEventListener - Restarting due to 1 class path change (0 additions, 0 deletions, 1 modification)
+2025-01-27 13:39:08.294 INFO  [Thread-27] o.s.b.w.e.tomcat.GracefulShutdown - Commencing graceful shutdown. Waiting for active requests to complete
+2025-01-27 13:39:08.338 INFO  [tomcat-shutdown] o.a.coyote.http11.Http11NioProtocol - Pausing ProtocolHandler ["http-nio-8080"]
+2025-01-27 13:39:08.381 INFO  [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown - Graceful shutdown complete
+2025-01-27 13:39:08.391 INFO  [Thread-27] o.a.coyote.http11.Http11NioProtocol - Stopping ProtocolHandler ["http-nio-8080"]
+2025-01-27 13:39:08.443 INFO  [Thread-27] o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-01-27 13:39:08.494 INFO  [Thread-27] com.zaxxer.hikari.HikariDataSource - HikariPool-7 - Shutdown initiated...
+2025-01-27 13:39:08.561 INFO  [Thread-27] com.zaxxer.hikari.HikariDataSource - HikariPool-7 - Shutdown completed.
+2025-01-27 13:39:11.368 INFO  [restartedMain] c.test.EnotesApiServiceApplication - Starting EnotesApiServiceApplication using Java 21.0.3 with PID 13692 (E:\Spring Boot API\enotes\target\classes started by user in E:\Spring Boot API\enotes)
+2025-01-27 13:39:11.368 INFO  [restartedMain] c.test.EnotesApiServiceApplication - The following 1 profile is active: "dev"
+2025-01-27 13:39:13.862 INFO  [restartedMain] o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-01-27 13:39:13.952 INFO  [restartedMain] o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 84 ms. Found 7 JPA repository interfaces.
+2025-01-27 13:39:14.432 INFO  [restartedMain] o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
+2025-01-27 13:39:14.437 INFO  [restartedMain] o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2025-01-27 13:39:14.438 INFO  [restartedMain] o.a.catalina.core.StandardService - Starting service [Tomcat]
+2025-01-27 13:39:14.438 INFO  [restartedMain] o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.34]
+2025-01-27 13:39:14.491 INFO  [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2025-01-27 13:39:14.491 INFO  [restartedMain] o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 3113 ms
+2025-01-27 13:39:14.647 INFO  [restartedMain] o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-01-27 13:39:14.692 INFO  [restartedMain] o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2025-01-27 13:39:14.955 INFO  [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-01-27 13:39:14.968 INFO  [restartedMain] com.zaxxer.hikari.HikariDataSource - HikariPool-8 - Starting...
+2025-01-27 13:39:15.020 INFO  [restartedMain] com.zaxxer.hikari.pool.HikariPool - HikariPool-8 - Added connection com.mysql.cj.jdbc.ConnectionImpl@5bd3449f
+2025-01-27 13:39:15.022 INFO  [restartedMain] com.zaxxer.hikari.HikariDataSource - HikariPool-8 - Start completed.
+2025-01-27 13:39:15.025 WARN  [restartedMain] org.hibernate.orm.deprecation - HHH90000025: MySQL8Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-01-27 13:39:15.025 WARN  [restartedMain] org.hibernate.orm.deprecation - HHH90000026: MySQL8Dialect has been deprecated; use org.hibernate.dialect.MySQLDialect instead
+2025-01-27 13:39:15.026 INFO  [restartedMain] o.hibernate.orm.connections.pooling - HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-8)']
+	Database driver: undefined/unknown
+	Database version: 8.0
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-01-27 13:39:16.015 INFO  [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-01-27 13:39:16.016 INFO  [restartedMain] o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-01-27 13:39:16.369 INFO  [restartedMain] o.s.s.c.a.a.c.InitializeAuthenticationProviderBeanManagerConfigurer$InitializeAuthenticationProviderManagerConfigurer - Global AuthenticationManager configured with AuthenticationProvider bean with name getDaoAuthenticationProvider
+2025-01-27 13:39:16.369 WARN  [restartedMain] o.s.s.c.a.a.c.InitializeUserDetailsBeanManagerConfigurer$InitializeUserDetailsManagerConfigurer - Global AuthenticationManager configured with an AuthenticationProvider bean. UserDetailsService beans will not be used by Spring Security for automatically configuring username/password login. Consider removing the AuthenticationProvider bean. Alternatively, consider using the UserDetailsService in a manually instantiated DaoAuthenticationProvider. If the current configuration is intentional, to turn off this warning, increase the logging level of 'org.springframework.security.config.annotation.authentication.configuration.InitializeUserDetailsBeanManagerConfigurer' to ERROR
+2025-01-27 13:39:16.638 WARN  [restartedMain] o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-01-27 13:39:17.501 INFO  [restartedMain] o.s.b.d.a.OptionalLiveReloadServer - LiveReload server is running on port 35729
+2025-01-27 13:39:17.526 INFO  [restartedMain] o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2025-01-27 13:39:17.537 INFO  [restartedMain] o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8080 (http) with context path '/'
+2025-01-27 13:39:17.547 INFO  [restartedMain] c.test.EnotesApiServiceApplication - Started EnotesApiServiceApplication in 6.867 seconds (process running for 2505.29)
+2025-01-27 13:39:17.551 INFO  [restartedMain] o.s.b.d.a.ConditionEvaluationDeltaLoggingListener - Condition evaluation unchanged
+2025-01-27 13:40:31.987 INFO  [File Watcher] o.s.b.d.a.LocalDevToolsAutoConfiguration$RestartingClassPathChangeChangedEventListener - Restarting due to 1 class path change (0 additions, 0 deletions, 1 modification)
+2025-01-27 13:40:32.218 INFO  [Thread-31] o.s.b.w.e.tomcat.GracefulShutdown - Commencing graceful shutdown. Waiting for active requests to complete
+2025-01-27 13:40:32.293 INFO  [tomcat-shutdown] o.a.coyote.http11.Http11NioProtocol - Pausing ProtocolHandler ["http-nio-8080"]
+2025-01-27 13:40:32.346 INFO  [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown - Graceful shutdown complete
+2025-01-27 13:40:32.359 INFO  [Thread-31] o.a.coyote.http11.Http11NioProtocol - Stopping ProtocolHandler ["http-nio-8080"]
+2025-01-27 13:40:32.428 INFO  [Thread-31] o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-01-27 13:40:32.530 INFO  [Thread-31] com.zaxxer.hikari.HikariDataSource - HikariPool-8 - Shutdown initiated...
+2025-01-27 13:40:32.586 INFO  [Thread-31] com.zaxxer.hikari.HikariDataSource - HikariPool-8 - Shutdown completed.
+2025-01-27 13:40:34.609 INFO  [restartedMain] c.test.EnotesApiServiceApplication - Starting EnotesApiServiceApplication using Java 21.0.3 with PID 13692 (E:\Spring Boot API\enotes\target\classes started by user in E:\Spring Boot API\enotes)
+2025-01-27 13:40:34.611 INFO  [restartedMain] c.test.EnotesApiServiceApplication - The following 1 profile is active: "dev"
+2025-01-27 13:40:36.356 INFO  [restartedMain] o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-01-27 13:40:36.421 INFO  [restartedMain] o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 62 ms. Found 7 JPA repository interfaces.
+2025-01-27 13:40:37.216 INFO  [restartedMain] o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
+2025-01-27 13:40:37.218 INFO  [restartedMain] o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2025-01-27 13:40:37.219 INFO  [restartedMain] o.a.catalina.core.StandardService - Starting service [Tomcat]
+2025-01-27 13:40:37.220 INFO  [restartedMain] o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.34]
+2025-01-27 13:40:37.272 INFO  [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2025-01-27 13:40:37.273 INFO  [restartedMain] o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 2642 ms
+2025-01-27 13:40:37.414 INFO  [restartedMain] o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-01-27 13:40:37.423 INFO  [restartedMain] o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2025-01-27 13:40:37.446 INFO  [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-01-27 13:40:37.450 INFO  [restartedMain] com.zaxxer.hikari.HikariDataSource - HikariPool-9 - Starting...
+2025-01-27 13:40:37.620 INFO  [restartedMain] com.zaxxer.hikari.pool.HikariPool - HikariPool-9 - Added connection com.mysql.cj.jdbc.ConnectionImpl@37193cae
+2025-01-27 13:40:37.621 INFO  [restartedMain] com.zaxxer.hikari.HikariDataSource - HikariPool-9 - Start completed.
+2025-01-27 13:40:37.628 WARN  [restartedMain] org.hibernate.orm.deprecation - HHH90000025: MySQL8Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-01-27 13:40:37.628 WARN  [restartedMain] org.hibernate.orm.deprecation - HHH90000026: MySQL8Dialect has been deprecated; use org.hibernate.dialect.MySQLDialect instead
+2025-01-27 13:40:37.629 INFO  [restartedMain] o.hibernate.orm.connections.pooling - HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-9)']
+	Database driver: undefined/unknown
+	Database version: 8.0
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-01-27 13:40:38.214 INFO  [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-01-27 13:40:38.216 INFO  [restartedMain] o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-01-27 13:40:38.475 INFO  [restartedMain] o.s.s.c.a.a.c.InitializeAuthenticationProviderBeanManagerConfigurer$InitializeAuthenticationProviderManagerConfigurer - Global AuthenticationManager configured with AuthenticationProvider bean with name getDaoAuthenticationProvider
+2025-01-27 13:40:38.475 WARN  [restartedMain] o.s.s.c.a.a.c.InitializeUserDetailsBeanManagerConfigurer$InitializeUserDetailsManagerConfigurer - Global AuthenticationManager configured with an AuthenticationProvider bean. UserDetailsService beans will not be used by Spring Security for automatically configuring username/password login. Consider removing the AuthenticationProvider bean. Alternatively, consider using the UserDetailsService in a manually instantiated DaoAuthenticationProvider. If the current configuration is intentional, to turn off this warning, increase the logging level of 'org.springframework.security.config.annotation.authentication.configuration.InitializeUserDetailsBeanManagerConfigurer' to ERROR
+2025-01-27 13:40:38.845 WARN  [restartedMain] o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-01-27 13:40:39.901 INFO  [restartedMain] o.s.b.d.a.OptionalLiveReloadServer - LiveReload server is running on port 35729
+2025-01-27 13:40:39.936 INFO  [restartedMain] o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2025-01-27 13:40:39.948 INFO  [restartedMain] o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8080 (http) with context path '/'
+2025-01-27 13:40:39.965 INFO  [restartedMain] c.test.EnotesApiServiceApplication - Started EnotesApiServiceApplication in 5.616 seconds (process running for 2587.708)
+2025-01-27 13:40:39.968 INFO  [restartedMain] o.s.b.d.a.ConditionEvaluationDeltaLoggingListener - Condition evaluation unchanged
+2025-01-27 13:41:01.926 INFO  [File Watcher] o.s.b.d.a.LocalDevToolsAutoConfiguration$RestartingClassPathChangeChangedEventListener - Restarting due to 1 class path change (0 additions, 0 deletions, 1 modification)
+2025-01-27 13:41:02.001 INFO  [Thread-35] o.s.b.w.e.tomcat.GracefulShutdown - Commencing graceful shutdown. Waiting for active requests to complete
+2025-01-27 13:41:02.015 INFO  [tomcat-shutdown] o.a.coyote.http11.Http11NioProtocol - Pausing ProtocolHandler ["http-nio-8080"]
+2025-01-27 13:41:02.041 INFO  [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown - Graceful shutdown complete
+2025-01-27 13:41:02.051 INFO  [Thread-35] o.a.coyote.http11.Http11NioProtocol - Stopping ProtocolHandler ["http-nio-8080"]
+2025-01-27 13:41:02.091 INFO  [Thread-35] o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-01-27 13:41:02.161 INFO  [Thread-35] com.zaxxer.hikari.HikariDataSource - HikariPool-9 - Shutdown initiated...
+2025-01-27 13:41:02.204 INFO  [Thread-35] com.zaxxer.hikari.HikariDataSource - HikariPool-9 - Shutdown completed.
+2025-01-27 13:41:03.609 INFO  [restartedMain] c.test.EnotesApiServiceApplication - Starting EnotesApiServiceApplication using Java 21.0.3 with PID 13692 (E:\Spring Boot API\enotes\target\classes started by user in E:\Spring Boot API\enotes)
+2025-01-27 13:41:03.611 INFO  [restartedMain] c.test.EnotesApiServiceApplication - The following 1 profile is active: "dev"
+2025-01-27 13:41:06.415 INFO  [restartedMain] o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-01-27 13:41:07.134 INFO  [restartedMain] o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 683 ms. Found 7 JPA repository interfaces.
+2025-01-27 13:41:09.499 INFO  [restartedMain] o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
+2025-01-27 13:41:09.500 INFO  [restartedMain] o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2025-01-27 13:41:09.502 INFO  [restartedMain] o.a.catalina.core.StandardService - Starting service [Tomcat]
+2025-01-27 13:41:09.502 INFO  [restartedMain] o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.34]
+2025-01-27 13:41:09.584 INFO  [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2025-01-27 13:41:09.584 INFO  [restartedMain] o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 5946 ms
+2025-01-27 13:41:11.105 INFO  [restartedMain] o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-01-27 13:41:11.115 INFO  [restartedMain] o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2025-01-27 13:41:11.163 INFO  [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-01-27 13:41:11.164 INFO  [restartedMain] com.zaxxer.hikari.HikariDataSource - HikariPool-10 - Starting...
+2025-01-27 13:41:11.246 INFO  [restartedMain] com.zaxxer.hikari.pool.HikariPool - HikariPool-10 - Added connection com.mysql.cj.jdbc.ConnectionImpl@3ec504bc
+2025-01-27 13:41:11.247 INFO  [restartedMain] com.zaxxer.hikari.HikariDataSource - HikariPool-10 - Start completed.
+2025-01-27 13:41:11.249 WARN  [restartedMain] org.hibernate.orm.deprecation - HHH90000025: MySQL8Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-01-27 13:41:11.249 WARN  [restartedMain] org.hibernate.orm.deprecation - HHH90000026: MySQL8Dialect has been deprecated; use org.hibernate.dialect.MySQLDialect instead
+2025-01-27 13:41:11.249 INFO  [restartedMain] o.hibernate.orm.connections.pooling - HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-10)']
+	Database driver: undefined/unknown
+	Database version: 8.0
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-01-27 13:41:13.403 INFO  [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-01-27 13:41:13.403 INFO  [restartedMain] o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-01-27 13:41:13.991 INFO  [restartedMain] o.s.s.c.a.a.c.InitializeAuthenticationProviderBeanManagerConfigurer$InitializeAuthenticationProviderManagerConfigurer - Global AuthenticationManager configured with AuthenticationProvider bean with name getDaoAuthenticationProvider
+2025-01-27 13:41:13.992 WARN  [restartedMain] o.s.s.c.a.a.c.InitializeUserDetailsBeanManagerConfigurer$InitializeUserDetailsManagerConfigurer - Global AuthenticationManager configured with an AuthenticationProvider bean. UserDetailsService beans will not be used by Spring Security for automatically configuring username/password login. Consider removing the AuthenticationProvider bean. Alternatively, consider using the UserDetailsService in a manually instantiated DaoAuthenticationProvider. If the current configuration is intentional, to turn off this warning, increase the logging level of 'org.springframework.security.config.annotation.authentication.configuration.InitializeUserDetailsBeanManagerConfigurer' to ERROR
+2025-01-27 13:41:14.365 WARN  [restartedMain] o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-01-27 13:41:16.141 INFO  [restartedMain] o.s.b.d.a.OptionalLiveReloadServer - LiveReload server is running on port 35729
+2025-01-27 13:41:16.187 INFO  [restartedMain] o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2025-01-27 13:41:16.203 INFO  [restartedMain] o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8080 (http) with context path '/'
+2025-01-27 13:41:16.237 INFO  [restartedMain] c.test.EnotesApiServiceApplication - Started EnotesApiServiceApplication in 13.041 seconds (process running for 2623.978)
+2025-01-27 13:41:16.253 INFO  [restartedMain] o.s.b.d.a.ConditionEvaluationDeltaLoggingListener - Condition evaluation unchanged
+2025-01-27 13:41:51.717 INFO  [File Watcher] o.s.b.d.a.LocalDevToolsAutoConfiguration$RestartingClassPathChangeChangedEventListener - Restarting due to 1 class path change (0 additions, 0 deletions, 1 modification)
+2025-01-27 13:41:51.725 INFO  [Thread-39] o.s.b.w.e.tomcat.GracefulShutdown - Commencing graceful shutdown. Waiting for active requests to complete
+2025-01-27 13:41:51.729 INFO  [tomcat-shutdown] o.a.coyote.http11.Http11NioProtocol - Pausing ProtocolHandler ["http-nio-8080"]
+2025-01-27 13:41:51.735 INFO  [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown - Graceful shutdown complete
+2025-01-27 13:41:51.735 INFO  [Thread-39] o.a.coyote.http11.Http11NioProtocol - Stopping ProtocolHandler ["http-nio-8080"]
+2025-01-27 13:41:51.744 INFO  [Thread-39] o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-01-27 13:41:51.747 INFO  [Thread-39] com.zaxxer.hikari.HikariDataSource - HikariPool-10 - Shutdown initiated...
+2025-01-27 13:41:51.751 INFO  [Thread-39] com.zaxxer.hikari.HikariDataSource - HikariPool-10 - Shutdown completed.
+2025-01-27 13:41:51.968 INFO  [restartedMain] c.test.EnotesApiServiceApplication - Starting EnotesApiServiceApplication using Java 21.0.3 with PID 13692 (E:\Spring Boot API\enotes\target\classes started by user in E:\Spring Boot API\enotes)
+2025-01-27 13:41:51.968 INFO  [restartedMain] c.test.EnotesApiServiceApplication - The following 1 profile is active: "dev"
+2025-01-27 13:41:52.470 INFO  [restartedMain] o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-01-27 13:41:52.508 INFO  [restartedMain] o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 35 ms. Found 7 JPA repository interfaces.
+2025-01-27 13:41:52.729 INFO  [restartedMain] o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
+2025-01-27 13:41:52.730 INFO  [restartedMain] o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2025-01-27 13:41:52.731 INFO  [restartedMain] o.a.catalina.core.StandardService - Starting service [Tomcat]
+2025-01-27 13:41:52.731 INFO  [restartedMain] o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.34]
+2025-01-27 13:41:52.770 INFO  [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2025-01-27 13:41:52.771 INFO  [restartedMain] o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 795 ms
+2025-01-27 13:41:52.877 INFO  [restartedMain] o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-01-27 13:41:52.881 INFO  [restartedMain] o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2025-01-27 13:41:52.898 INFO  [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-01-27 13:41:52.899 INFO  [restartedMain] com.zaxxer.hikari.HikariDataSource - HikariPool-11 - Starting...
+2025-01-27 13:41:52.905 INFO  [restartedMain] com.zaxxer.hikari.pool.HikariPool - HikariPool-11 - Added connection com.mysql.cj.jdbc.ConnectionImpl@2bec6fea
+2025-01-27 13:41:52.905 INFO  [restartedMain] com.zaxxer.hikari.HikariDataSource - HikariPool-11 - Start completed.
+2025-01-27 13:41:52.906 WARN  [restartedMain] org.hibernate.orm.deprecation - HHH90000025: MySQL8Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-01-27 13:41:52.906 WARN  [restartedMain] org.hibernate.orm.deprecation - HHH90000026: MySQL8Dialect has been deprecated; use org.hibernate.dialect.MySQLDialect instead
+2025-01-27 13:41:52.906 INFO  [restartedMain] o.hibernate.orm.connections.pooling - HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-11)']
+	Database driver: undefined/unknown
+	Database version: 8.0
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-01-27 13:41:53.508 INFO  [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-01-27 13:41:53.509 INFO  [restartedMain] o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-01-27 13:41:53.763 INFO  [restartedMain] o.s.s.c.a.a.c.InitializeAuthenticationProviderBeanManagerConfigurer$InitializeAuthenticationProviderManagerConfigurer - Global AuthenticationManager configured with AuthenticationProvider bean with name getDaoAuthenticationProvider
+2025-01-27 13:41:53.763 WARN  [restartedMain] o.s.s.c.a.a.c.InitializeUserDetailsBeanManagerConfigurer$InitializeUserDetailsManagerConfigurer - Global AuthenticationManager configured with an AuthenticationProvider bean. UserDetailsService beans will not be used by Spring Security for automatically configuring username/password login. Consider removing the AuthenticationProvider bean. Alternatively, consider using the UserDetailsService in a manually instantiated DaoAuthenticationProvider. If the current configuration is intentional, to turn off this warning, increase the logging level of 'org.springframework.security.config.annotation.authentication.configuration.InitializeUserDetailsBeanManagerConfigurer' to ERROR
+2025-01-27 13:41:54.211 WARN  [restartedMain] o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-01-27 13:41:54.846 INFO  [restartedMain] o.s.b.d.a.OptionalLiveReloadServer - LiveReload server is running on port 35729
+2025-01-27 13:41:54.872 INFO  [restartedMain] o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2025-01-27 13:41:54.880 INFO  [restartedMain] o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8080 (http) with context path '/'
+2025-01-27 13:41:54.892 INFO  [restartedMain] c.test.EnotesApiServiceApplication - Started EnotesApiServiceApplication in 2.987 seconds (process running for 2662.635)
+2025-01-27 13:41:54.894 INFO  [restartedMain] o.s.b.d.a.ConditionEvaluationDeltaLoggingListener - Condition evaluation unchanged
+2025-01-27 13:42:08.147 INFO  [File Watcher] o.s.b.d.a.LocalDevToolsAutoConfiguration$RestartingClassPathChangeChangedEventListener - Restarting due to 1 class path change (0 additions, 0 deletions, 1 modification)
+2025-01-27 13:42:08.151 INFO  [Thread-43] o.s.b.w.e.tomcat.GracefulShutdown - Commencing graceful shutdown. Waiting for active requests to complete
+2025-01-27 13:42:08.153 INFO  [tomcat-shutdown] o.a.coyote.http11.Http11NioProtocol - Pausing ProtocolHandler ["http-nio-8080"]
+2025-01-27 13:42:08.161 INFO  [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown - Graceful shutdown complete
+2025-01-27 13:42:08.162 INFO  [Thread-43] o.a.coyote.http11.Http11NioProtocol - Stopping ProtocolHandler ["http-nio-8080"]
+2025-01-27 13:42:08.174 INFO  [Thread-43] o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-01-27 13:42:08.176 INFO  [Thread-43] com.zaxxer.hikari.HikariDataSource - HikariPool-11 - Shutdown initiated...
+2025-01-27 13:42:08.184 INFO  [Thread-43] com.zaxxer.hikari.HikariDataSource - HikariPool-11 - Shutdown completed.
+2025-01-27 13:42:08.421 INFO  [restartedMain] c.test.EnotesApiServiceApplication - Starting EnotesApiServiceApplication using Java 21.0.3 with PID 13692 (E:\Spring Boot API\enotes\target\classes started by user in E:\Spring Boot API\enotes)
+2025-01-27 13:42:08.422 INFO  [restartedMain] c.test.EnotesApiServiceApplication - The following 1 profile is active: "dev"
+2025-01-27 13:42:09.079 INFO  [restartedMain] o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-01-27 13:42:09.134 INFO  [restartedMain] o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 49 ms. Found 7 JPA repository interfaces.
+2025-01-27 13:42:09.384 INFO  [restartedMain] o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
+2025-01-27 13:42:09.387 INFO  [restartedMain] o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2025-01-27 13:42:09.388 INFO  [restartedMain] o.a.catalina.core.StandardService - Starting service [Tomcat]
+2025-01-27 13:42:09.388 INFO  [restartedMain] o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.34]
+2025-01-27 13:42:09.418 INFO  [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2025-01-27 13:42:09.418 INFO  [restartedMain] o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 992 ms
+2025-01-27 13:42:09.506 INFO  [restartedMain] o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-01-27 13:42:09.510 INFO  [restartedMain] o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2025-01-27 13:42:09.522 INFO  [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-01-27 13:42:09.524 INFO  [restartedMain] com.zaxxer.hikari.HikariDataSource - HikariPool-12 - Starting...
+2025-01-27 13:42:09.528 INFO  [restartedMain] com.zaxxer.hikari.pool.HikariPool - HikariPool-12 - Added connection com.mysql.cj.jdbc.ConnectionImpl@291858ce
+2025-01-27 13:42:09.528 INFO  [restartedMain] com.zaxxer.hikari.HikariDataSource - HikariPool-12 - Start completed.
+2025-01-27 13:42:09.529 WARN  [restartedMain] org.hibernate.orm.deprecation - HHH90000025: MySQL8Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-01-27 13:42:09.530 WARN  [restartedMain] org.hibernate.orm.deprecation - HHH90000026: MySQL8Dialect has been deprecated; use org.hibernate.dialect.MySQLDialect instead
+2025-01-27 13:42:09.530 INFO  [restartedMain] o.hibernate.orm.connections.pooling - HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-12)']
+	Database driver: undefined/unknown
+	Database version: 8.0
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-01-27 13:42:09.939 INFO  [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-01-27 13:42:09.940 INFO  [restartedMain] o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-01-27 13:42:10.229 INFO  [restartedMain] o.s.s.c.a.a.c.InitializeAuthenticationProviderBeanManagerConfigurer$InitializeAuthenticationProviderManagerConfigurer - Global AuthenticationManager configured with AuthenticationProvider bean with name getDaoAuthenticationProvider
+2025-01-27 13:42:10.229 WARN  [restartedMain] o.s.s.c.a.a.c.InitializeUserDetailsBeanManagerConfigurer$InitializeUserDetailsManagerConfigurer - Global AuthenticationManager configured with an AuthenticationProvider bean. UserDetailsService beans will not be used by Spring Security for automatically configuring username/password login. Consider removing the AuthenticationProvider bean. Alternatively, consider using the UserDetailsService in a manually instantiated DaoAuthenticationProvider. If the current configuration is intentional, to turn off this warning, increase the logging level of 'org.springframework.security.config.annotation.authentication.configuration.InitializeUserDetailsBeanManagerConfigurer' to ERROR
+2025-01-27 13:42:10.499 WARN  [restartedMain] o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-01-27 13:42:11.135 INFO  [restartedMain] o.s.b.d.a.OptionalLiveReloadServer - LiveReload server is running on port 35729
+2025-01-27 13:42:11.164 INFO  [restartedMain] o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2025-01-27 13:42:11.173 INFO  [restartedMain] o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8080 (http) with context path '/'
+2025-01-27 13:42:11.183 INFO  [restartedMain] c.test.EnotesApiServiceApplication - Started EnotesApiServiceApplication in 2.806 seconds (process running for 2678.925)
+2025-01-27 13:42:11.187 INFO  [restartedMain] o.s.b.d.a.ConditionEvaluationDeltaLoggingListener - Condition evaluation unchanged
+2025-01-27 13:44:32.079 INFO  [File Watcher] o.s.b.d.a.LocalDevToolsAutoConfiguration$RestartingClassPathChangeChangedEventListener - Restarting due to 1 class path change (0 additions, 0 deletions, 1 modification)
+2025-01-27 13:44:32.482 INFO  [Thread-47] o.s.b.w.e.tomcat.GracefulShutdown - Commencing graceful shutdown. Waiting for active requests to complete
+2025-01-27 13:44:33.029 INFO  [tomcat-shutdown] o.a.coyote.http11.Http11NioProtocol - Pausing ProtocolHandler ["http-nio-8080"]
+2025-01-27 13:44:33.080 INFO  [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown - Graceful shutdown complete
+2025-01-27 13:44:33.091 INFO  [Thread-47] o.a.coyote.http11.Http11NioProtocol - Stopping ProtocolHandler ["http-nio-8080"]
+2025-01-27 13:44:33.148 INFO  [Thread-47] o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-01-27 13:44:33.212 INFO  [Thread-47] com.zaxxer.hikari.HikariDataSource - HikariPool-12 - Shutdown initiated...
+2025-01-27 13:44:33.255 INFO  [Thread-47] com.zaxxer.hikari.HikariDataSource - HikariPool-12 - Shutdown completed.
+2025-01-27 13:44:36.396 INFO  [restartedMain] c.test.EnotesApiServiceApplication - Starting EnotesApiServiceApplication using Java 21.0.3 with PID 13692 (E:\Spring Boot API\enotes\target\classes started by user in E:\Spring Boot API\enotes)
+2025-01-27 13:44:36.411 INFO  [restartedMain] c.test.EnotesApiServiceApplication - The following 1 profile is active: "dev"
+2025-01-27 13:44:37.683 INFO  [restartedMain] o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-01-27 13:44:37.795 INFO  [restartedMain] o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 95 ms. Found 7 JPA repository interfaces.
+2025-01-27 13:44:38.190 INFO  [restartedMain] o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
+2025-01-27 13:44:38.193 INFO  [restartedMain] o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2025-01-27 13:44:38.194 INFO  [restartedMain] o.a.catalina.core.StandardService - Starting service [Tomcat]
+2025-01-27 13:44:38.194 INFO  [restartedMain] o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.34]
+2025-01-27 13:44:38.252 INFO  [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2025-01-27 13:44:38.256 INFO  [restartedMain] o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1801 ms
+2025-01-27 13:44:38.425 INFO  [restartedMain] o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-01-27 13:44:38.443 INFO  [restartedMain] o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2025-01-27 13:44:38.474 INFO  [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-01-27 13:44:38.481 INFO  [restartedMain] com.zaxxer.hikari.HikariDataSource - HikariPool-13 - Starting...
+2025-01-27 13:44:38.788 INFO  [restartedMain] com.zaxxer.hikari.pool.HikariPool - HikariPool-13 - Added connection com.mysql.cj.jdbc.ConnectionImpl@3013350d
+2025-01-27 13:44:38.788 INFO  [restartedMain] com.zaxxer.hikari.HikariDataSource - HikariPool-13 - Start completed.
+2025-01-27 13:44:38.791 WARN  [restartedMain] org.hibernate.orm.deprecation - HHH90000025: MySQL8Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-01-27 13:44:38.791 WARN  [restartedMain] org.hibernate.orm.deprecation - HHH90000026: MySQL8Dialect has been deprecated; use org.hibernate.dialect.MySQLDialect instead
+2025-01-27 13:44:38.792 INFO  [restartedMain] o.hibernate.orm.connections.pooling - HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-13)']
+	Database driver: undefined/unknown
+	Database version: 8.0
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-01-27 13:44:39.324 INFO  [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-01-27 13:44:39.329 INFO  [restartedMain] o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-01-27 13:44:39.965 INFO  [restartedMain] o.s.s.c.a.a.c.InitializeAuthenticationProviderBeanManagerConfigurer$InitializeAuthenticationProviderManagerConfigurer - Global AuthenticationManager configured with AuthenticationProvider bean with name getDaoAuthenticationProvider
+2025-01-27 13:44:39.966 WARN  [restartedMain] o.s.s.c.a.a.c.InitializeUserDetailsBeanManagerConfigurer$InitializeUserDetailsManagerConfigurer - Global AuthenticationManager configured with an AuthenticationProvider bean. UserDetailsService beans will not be used by Spring Security for automatically configuring username/password login. Consider removing the AuthenticationProvider bean. Alternatively, consider using the UserDetailsService in a manually instantiated DaoAuthenticationProvider. If the current configuration is intentional, to turn off this warning, increase the logging level of 'org.springframework.security.config.annotation.authentication.configuration.InitializeUserDetailsBeanManagerConfigurer' to ERROR
+2025-01-27 13:44:40.272 WARN  [restartedMain] o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-01-27 13:44:40.925 INFO  [restartedMain] o.s.b.d.a.OptionalLiveReloadServer - LiveReload server is running on port 35729
+2025-01-27 13:44:40.947 INFO  [restartedMain] o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2025-01-27 13:44:40.962 INFO  [restartedMain] o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8080 (http) with context path '/'
+2025-01-27 13:44:40.973 INFO  [restartedMain] c.test.EnotesApiServiceApplication - Started EnotesApiServiceApplication in 4.897 seconds (process running for 2828.716)
+2025-01-27 13:44:40.976 INFO  [restartedMain] o.s.b.d.a.ConditionEvaluationDeltaLoggingListener - Condition evaluation unchanged
+2025-01-27 13:46:03.894 INFO  [File Watcher] o.s.b.d.a.LocalDevToolsAutoConfiguration$RestartingClassPathChangeChangedEventListener - Restarting due to 1 class path change (0 additions, 0 deletions, 1 modification)
+2025-01-27 13:46:04.093 INFO  [Thread-51] o.s.b.w.e.tomcat.GracefulShutdown - Commencing graceful shutdown. Waiting for active requests to complete
+2025-01-27 13:46:04.122 INFO  [tomcat-shutdown] o.a.coyote.http11.Http11NioProtocol - Pausing ProtocolHandler ["http-nio-8080"]
+2025-01-27 13:46:04.183 INFO  [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown - Graceful shutdown complete
+2025-01-27 13:46:04.227 INFO  [Thread-51] o.a.coyote.http11.Http11NioProtocol - Stopping ProtocolHandler ["http-nio-8080"]
+2025-01-27 13:46:04.275 INFO  [Thread-51] o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-01-27 13:46:04.324 INFO  [Thread-51] com.zaxxer.hikari.HikariDataSource - HikariPool-13 - Shutdown initiated...
+2025-01-27 13:46:04.358 INFO  [Thread-51] com.zaxxer.hikari.HikariDataSource - HikariPool-13 - Shutdown completed.
+2025-01-27 13:46:05.639 INFO  [restartedMain] c.test.EnotesApiServiceApplication - Starting EnotesApiServiceApplication using Java 21.0.3 with PID 13692 (E:\Spring Boot API\enotes\target\classes started by user in E:\Spring Boot API\enotes)
+2025-01-27 13:46:05.639 INFO  [restartedMain] c.test.EnotesApiServiceApplication - The following 1 profile is active: "dev"
+2025-01-27 13:46:08.534 INFO  [restartedMain] o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-01-27 13:46:08.638 INFO  [restartedMain] o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 101 ms. Found 7 JPA repository interfaces.
+2025-01-27 13:46:09.054 INFO  [restartedMain] o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
+2025-01-27 13:46:09.056 INFO  [restartedMain] o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2025-01-27 13:46:09.058 INFO  [restartedMain] o.a.catalina.core.StandardService - Starting service [Tomcat]
+2025-01-27 13:46:09.060 INFO  [restartedMain] o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.34]
+2025-01-27 13:46:09.131 INFO  [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2025-01-27 13:46:09.132 INFO  [restartedMain] o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 3486 ms
+2025-01-27 13:46:09.459 INFO  [restartedMain] o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-01-27 13:46:09.496 INFO  [restartedMain] o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2025-01-27 13:46:09.530 INFO  [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-01-27 13:46:09.532 INFO  [restartedMain] com.zaxxer.hikari.HikariDataSource - HikariPool-14 - Starting...
+2025-01-27 13:46:09.704 INFO  [restartedMain] com.zaxxer.hikari.pool.HikariPool - HikariPool-14 - Added connection com.mysql.cj.jdbc.ConnectionImpl@460bd646
+2025-01-27 13:46:09.704 INFO  [restartedMain] com.zaxxer.hikari.HikariDataSource - HikariPool-14 - Start completed.
+2025-01-27 13:46:09.706 WARN  [restartedMain] org.hibernate.orm.deprecation - HHH90000025: MySQL8Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-01-27 13:46:09.707 WARN  [restartedMain] org.hibernate.orm.deprecation - HHH90000026: MySQL8Dialect has been deprecated; use org.hibernate.dialect.MySQLDialect instead
+2025-01-27 13:46:09.707 INFO  [restartedMain] o.hibernate.orm.connections.pooling - HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-14)']
+	Database driver: undefined/unknown
+	Database version: 8.0
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-01-27 13:46:11.042 INFO  [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-01-27 13:46:11.063 INFO  [restartedMain] o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-01-27 13:46:11.633 INFO  [restartedMain] o.s.s.c.a.a.c.InitializeAuthenticationProviderBeanManagerConfigurer$InitializeAuthenticationProviderManagerConfigurer - Global AuthenticationManager configured with AuthenticationProvider bean with name getDaoAuthenticationProvider
+2025-01-27 13:46:11.633 WARN  [restartedMain] o.s.s.c.a.a.c.InitializeUserDetailsBeanManagerConfigurer$InitializeUserDetailsManagerConfigurer - Global AuthenticationManager configured with an AuthenticationProvider bean. UserDetailsService beans will not be used by Spring Security for automatically configuring username/password login. Consider removing the AuthenticationProvider bean. Alternatively, consider using the UserDetailsService in a manually instantiated DaoAuthenticationProvider. If the current configuration is intentional, to turn off this warning, increase the logging level of 'org.springframework.security.config.annotation.authentication.configuration.InitializeUserDetailsBeanManagerConfigurer' to ERROR
+2025-01-27 13:46:11.905 WARN  [restartedMain] o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-01-27 13:46:12.549 INFO  [restartedMain] o.s.b.d.a.OptionalLiveReloadServer - LiveReload server is running on port 35729
+2025-01-27 13:46:12.570 INFO  [restartedMain] o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2025-01-27 13:46:12.578 INFO  [restartedMain] o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8080 (http) with context path '/'
+2025-01-27 13:46:12.608 INFO  [restartedMain] c.test.EnotesApiServiceApplication - Started EnotesApiServiceApplication in 7.144 seconds (process running for 2920.351)
+2025-01-27 13:46:12.612 INFO  [restartedMain] o.s.b.d.a.ConditionEvaluationDeltaLoggingListener - Condition evaluation unchanged
+2025-01-27 13:46:14.326 INFO  [File Watcher] o.s.b.d.a.LocalDevToolsAutoConfiguration$RestartingClassPathChangeChangedEventListener - Restarting due to 1 class path change (0 additions, 0 deletions, 1 modification)
+2025-01-27 13:46:14.329 INFO  [Thread-55] o.s.b.w.e.tomcat.GracefulShutdown - Commencing graceful shutdown. Waiting for active requests to complete
+2025-01-27 13:46:14.329 INFO  [tomcat-shutdown] o.a.coyote.http11.Http11NioProtocol - Pausing ProtocolHandler ["http-nio-8080"]
+2025-01-27 13:46:14.339 INFO  [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown - Graceful shutdown complete
+2025-01-27 13:46:14.339 INFO  [Thread-55] o.a.coyote.http11.Http11NioProtocol - Stopping ProtocolHandler ["http-nio-8080"]
+2025-01-27 13:46:14.345 INFO  [Thread-55] o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-01-27 13:46:14.346 INFO  [Thread-55] com.zaxxer.hikari.HikariDataSource - HikariPool-14 - Shutdown initiated...
+2025-01-27 13:46:14.354 INFO  [Thread-55] com.zaxxer.hikari.HikariDataSource - HikariPool-14 - Shutdown completed.
+2025-01-27 13:46:14.642 INFO  [restartedMain] c.test.EnotesApiServiceApplication - Starting EnotesApiServiceApplication using Java 21.0.3 with PID 13692 (E:\Spring Boot API\enotes\target\classes started by user in E:\Spring Boot API\enotes)
+2025-01-27 13:46:14.642 INFO  [restartedMain] c.test.EnotesApiServiceApplication - The following 1 profile is active: "dev"
+2025-01-27 13:46:16.062 INFO  [restartedMain] o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-01-27 13:46:16.142 INFO  [restartedMain] o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 65 ms. Found 7 JPA repository interfaces.
+2025-01-27 13:46:17.177 INFO  [restartedMain] o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
+2025-01-27 13:46:17.178 INFO  [restartedMain] o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2025-01-27 13:46:17.178 INFO  [restartedMain] o.a.catalina.core.StandardService - Starting service [Tomcat]
+2025-01-27 13:46:17.178 INFO  [restartedMain] o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.34]
+2025-01-27 13:46:17.211 INFO  [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2025-01-27 13:46:17.212 INFO  [restartedMain] o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 2558 ms
+2025-01-27 13:46:17.313 INFO  [restartedMain] o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-01-27 13:46:17.317 INFO  [restartedMain] o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2025-01-27 13:46:17.328 INFO  [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-01-27 13:46:17.331 INFO  [restartedMain] com.zaxxer.hikari.HikariDataSource - HikariPool-15 - Starting...
+2025-01-27 13:46:17.335 INFO  [restartedMain] com.zaxxer.hikari.pool.HikariPool - HikariPool-15 - Added connection com.mysql.cj.jdbc.ConnectionImpl@10c8174a
+2025-01-27 13:46:17.337 INFO  [restartedMain] com.zaxxer.hikari.HikariDataSource - HikariPool-15 - Start completed.
+2025-01-27 13:46:17.338 WARN  [restartedMain] org.hibernate.orm.deprecation - HHH90000025: MySQL8Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-01-27 13:46:17.338 WARN  [restartedMain] org.hibernate.orm.deprecation - HHH90000026: MySQL8Dialect has been deprecated; use org.hibernate.dialect.MySQLDialect instead
+2025-01-27 13:46:17.339 INFO  [restartedMain] o.hibernate.orm.connections.pooling - HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-15)']
+	Database driver: undefined/unknown
+	Database version: 8.0
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-01-27 13:46:17.966 INFO  [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-01-27 13:46:17.967 INFO  [restartedMain] o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-01-27 13:46:18.291 INFO  [restartedMain] o.s.s.c.a.a.c.InitializeAuthenticationProviderBeanManagerConfigurer$InitializeAuthenticationProviderManagerConfigurer - Global AuthenticationManager configured with AuthenticationProvider bean with name getDaoAuthenticationProvider
+2025-01-27 13:46:18.291 WARN  [restartedMain] o.s.s.c.a.a.c.InitializeUserDetailsBeanManagerConfigurer$InitializeUserDetailsManagerConfigurer - Global AuthenticationManager configured with an AuthenticationProvider bean. UserDetailsService beans will not be used by Spring Security for automatically configuring username/password login. Consider removing the AuthenticationProvider bean. Alternatively, consider using the UserDetailsService in a manually instantiated DaoAuthenticationProvider. If the current configuration is intentional, to turn off this warning, increase the logging level of 'org.springframework.security.config.annotation.authentication.configuration.InitializeUserDetailsBeanManagerConfigurer' to ERROR
+2025-01-27 13:46:18.522 WARN  [restartedMain] o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-01-27 13:46:19.427 INFO  [restartedMain] o.s.b.d.a.OptionalLiveReloadServer - LiveReload server is running on port 35729
+2025-01-27 13:46:19.454 INFO  [restartedMain] o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2025-01-27 13:46:19.460 INFO  [restartedMain] o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8080 (http) with context path '/'
+2025-01-27 13:46:19.466 INFO  [restartedMain] c.test.EnotesApiServiceApplication - Started EnotesApiServiceApplication in 4.881 seconds (process running for 2927.21)
+2025-01-27 13:46:19.471 INFO  [restartedMain] o.s.b.d.a.ConditionEvaluationDeltaLoggingListener - Condition evaluation unchanged
+2025-01-27 13:46:42.250 INFO  [RMI TCP Connection(53)-127.0.0.1] o.s.b.a.SpringApplicationAdminMXBeanRegistrar$SpringApplicationAdmin - Application shutdown requested.
+2025-01-27 13:46:42.349 INFO  [RMI TCP Connection(53)-127.0.0.1] o.s.b.w.e.tomcat.GracefulShutdown - Commencing graceful shutdown. Waiting for active requests to complete
+2025-01-27 13:46:42.365 INFO  [tomcat-shutdown] o.a.coyote.http11.Http11NioProtocol - Pausing ProtocolHandler ["http-nio-8080"]
+2025-01-27 13:46:42.382 INFO  [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown - Graceful shutdown complete
+2025-01-27 13:46:42.386 INFO  [RMI TCP Connection(53)-127.0.0.1] o.a.coyote.http11.Http11NioProtocol - Stopping ProtocolHandler ["http-nio-8080"]
+2025-01-27 13:46:42.420 INFO  [RMI TCP Connection(53)-127.0.0.1] o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-01-27 13:46:42.461 INFO  [RMI TCP Connection(53)-127.0.0.1] com.zaxxer.hikari.HikariDataSource - HikariPool-15 - Shutdown initiated...
+2025-01-27 13:46:42.494 INFO  [RMI TCP Connection(53)-127.0.0.1] com.zaxxer.hikari.HikariDataSource - HikariPool-15 - Shutdown completed.
+2025-01-27 13:51:25.561 INFO  [background-preinit] o.h.validator.internal.util.Version - HV000001: Hibernate Validator 8.0.2.Final
+2025-01-27 13:51:25.677 INFO  [restartedMain] c.test.EnotesApiServiceApplication - Starting EnotesApiServiceApplication using Java 21.0.3 with PID 15016 (E:\Spring Boot API\enotes\target\classes started by user in E:\Spring Boot API\enotes)
+2025-01-27 13:51:25.682 INFO  [restartedMain] c.test.EnotesApiServiceApplication - The following 1 profile is active: "dev"
+2025-01-27 13:51:25.772 INFO  [restartedMain] o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2025-01-27 13:51:25.772 INFO  [restartedMain] o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2025-01-27 13:51:28.355 INFO  [restartedMain] o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-01-27 13:51:28.529 INFO  [restartedMain] o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 159 ms. Found 7 JPA repository interfaces.
+2025-01-27 13:51:31.499 INFO  [restartedMain] o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
+2025-01-27 13:51:31.522 INFO  [restartedMain] o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2025-01-27 13:51:31.547 INFO  [restartedMain] o.a.catalina.core.StandardService - Starting service [Tomcat]
+2025-01-27 13:51:31.549 INFO  [restartedMain] o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.34]
+2025-01-27 13:51:31.669 INFO  [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2025-01-27 13:51:31.670 INFO  [restartedMain] o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 5897 ms
+2025-01-27 13:51:31.975 INFO  [restartedMain] o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-01-27 13:51:32.093 INFO  [restartedMain] org.hibernate.Version - HHH000412: Hibernate ORM core version 6.6.4.Final
+2025-01-27 13:51:32.161 INFO  [restartedMain] o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2025-01-27 13:51:32.643 INFO  [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-01-27 13:51:32.697 INFO  [restartedMain] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2025-01-27 13:51:33.277 INFO  [restartedMain] com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@69d2ff38
+2025-01-27 13:51:33.283 INFO  [restartedMain] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2025-01-27 13:51:33.328 WARN  [restartedMain] org.hibernate.orm.deprecation - HHH90000025: MySQL8Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-01-27 13:51:33.331 WARN  [restartedMain] org.hibernate.orm.deprecation - HHH90000026: MySQL8Dialect has been deprecated; use org.hibernate.dialect.MySQLDialect instead
+2025-01-27 13:51:33.368 INFO  [restartedMain] o.hibernate.orm.connections.pooling - HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 8.0
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-01-27 13:51:35.405 INFO  [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-01-27 13:51:35.411 INFO  [restartedMain] o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-01-27 13:51:36.371 INFO  [restartedMain] o.s.s.c.a.a.c.InitializeAuthenticationProviderBeanManagerConfigurer$InitializeAuthenticationProviderManagerConfigurer - Global AuthenticationManager configured with AuthenticationProvider bean with name getDaoAuthenticationProvider
+2025-01-27 13:51:36.372 WARN  [restartedMain] o.s.s.c.a.a.c.InitializeUserDetailsBeanManagerConfigurer$InitializeUserDetailsManagerConfigurer - Global AuthenticationManager configured with an AuthenticationProvider bean. UserDetailsService beans will not be used by Spring Security for automatically configuring username/password login. Consider removing the AuthenticationProvider bean. Alternatively, consider using the UserDetailsService in a manually instantiated DaoAuthenticationProvider. If the current configuration is intentional, to turn off this warning, increase the logging level of 'org.springframework.security.config.annotation.authentication.configuration.InitializeUserDetailsBeanManagerConfigurer' to ERROR
+2025-01-27 13:51:36.636 INFO  [restartedMain] o.s.d.j.r.query.QueryEnhancerFactory - Hibernate is in classpath; If applicable, HQL parser will be used.
+2025-01-27 13:51:42.510 WARN  [restartedMain] o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-01-27 13:51:43.936 INFO  [restartedMain] o.s.b.d.a.OptionalLiveReloadServer - LiveReload server is running on port 35729
+2025-01-27 13:51:43.995 INFO  [restartedMain] o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2025-01-27 13:51:44.035 INFO  [restartedMain] o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8080 (http) with context path '/'
+2025-01-27 13:51:44.066 INFO  [restartedMain] c.test.EnotesApiServiceApplication - Started EnotesApiServiceApplication in 19.299 seconds (process running for 21.845)
+2025-01-27 13:52:06.745 INFO  [http-nio-8080-exec-2] o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-01-27 13:52:06.745 INFO  [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2025-01-27 13:52:06.747 INFO  [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet - Completed initialization in 2 ms
+2025-01-27 13:52:07.008 INFO  [http-nio-8080-exec-2] com.test.controller.AuthController - AuthController : loginUser() : Execution Start
+2025-01-27 13:52:07.008 INFO  [http-nio-8080-exec-2] c.test.service.impl.AuthServiceImpl - AuthServiceImpl : loginUser() : Execution Start
+2025-01-27 13:52:08.572 INFO  [http-nio-8080-exec-2] c.test.service.impl.AuthServiceImpl - Message : User logged in successfully!
+2025-01-27 13:52:08.573 INFO  [http-nio-8080-exec-2] c.test.service.impl.AuthServiceImpl - AuthServiceImpl : loginUser() : Execution End
+2025-01-27 13:52:08.573 INFO  [http-nio-8080-exec-2] com.test.controller.AuthController - AuthController : loginUser() : Execution End
+2025-01-27 13:52:31.108 INFO  [http-nio-8080-exec-3] com.test.controller.NotesController - NotesController : saveNotes() : Execution Start
+2025-01-27 13:52:31.108 INFO  [http-nio-8080-exec-3] c.test.service.impl.NotesServiceImpl - NotesServiceImpl : saveNotes() : Execution Start
+2025-01-27 13:52:31.142 INFO  [http-nio-8080-exec-3] com.test.util.Validation - Validation : notesValidation() : Execution Start
+2025-01-27 13:52:31.142 INFO  [http-nio-8080-exec-3] com.test.util.Validation - Message : Notes validation starts!
+2025-01-27 13:52:31.284 INFO  [http-nio-8080-exec-3] c.test.service.impl.NotesServiceImpl - Message : Notes dummy notes! already exists!
+2025-01-27 13:52:31.289 ERROR [http-nio-8080-exec-3] c.t.exception.GlobalExceptionHandler - GlobalExceptionHandler : ExistDataException() : Notes [dummy notes!] already exists!
+2025-01-27 13:52:31.292 WARN  [http-nio-8080-exec-3] o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [com.test.exception.ExistDataException: Notes [dummy notes!] already exists!]
+2025-01-27 13:52:33.202 INFO  [http-nio-8080-exec-4] com.test.controller.NotesController - NotesController : saveNotes() : Execution Start
+2025-01-27 13:52:33.202 INFO  [http-nio-8080-exec-4] c.test.service.impl.NotesServiceImpl - NotesServiceImpl : saveNotes() : Execution Start
+2025-01-27 13:52:33.207 INFO  [http-nio-8080-exec-4] com.test.util.Validation - Validation : notesValidation() : Execution Start
+2025-01-27 13:52:33.207 INFO  [http-nio-8080-exec-4] com.test.util.Validation - Message : Notes validation starts!
+2025-01-27 13:52:33.214 INFO  [http-nio-8080-exec-4] c.test.service.impl.NotesServiceImpl - Message : Notes dummy notes! already exists!
+2025-01-27 13:52:33.215 ERROR [http-nio-8080-exec-4] c.t.exception.GlobalExceptionHandler - GlobalExceptionHandler : ExistDataException() : Notes [dummy notes!] already exists!
+2025-01-27 13:52:33.218 WARN  [http-nio-8080-exec-4] o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [com.test.exception.ExistDataException: Notes [dummy notes!] already exists!]
+2025-01-27 13:52:34.916 INFO  [http-nio-8080-exec-5] com.test.controller.NotesController - NotesController : saveNotes() : Execution Start
+2025-01-27 13:52:34.916 INFO  [http-nio-8080-exec-5] c.test.service.impl.NotesServiceImpl - NotesServiceImpl : saveNotes() : Execution Start
+2025-01-27 13:52:34.925 INFO  [http-nio-8080-exec-5] com.test.util.Validation - Validation : notesValidation() : Execution Start
+2025-01-27 13:52:34.925 INFO  [http-nio-8080-exec-5] com.test.util.Validation - Message : Notes validation starts!
+2025-01-27 13:52:34.930 INFO  [http-nio-8080-exec-5] c.test.service.impl.NotesServiceImpl - Message : Notes dummy notes! already exists!
+2025-01-27 13:52:34.932 ERROR [http-nio-8080-exec-5] c.t.exception.GlobalExceptionHandler - GlobalExceptionHandler : ExistDataException() : Notes [dummy notes!] already exists!
+2025-01-27 13:52:34.934 WARN  [http-nio-8080-exec-5] o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [com.test.exception.ExistDataException: Notes [dummy notes!] already exists!]
+2025-01-27 13:52:43.724 INFO  [http-nio-8080-exec-6] com.test.controller.NotesController - NotesController : saveNotes() : Execution Start
+2025-01-27 13:52:43.725 INFO  [http-nio-8080-exec-6] c.test.service.impl.NotesServiceImpl - NotesServiceImpl : saveNotes() : Execution Start
+2025-01-27 13:52:43.727 INFO  [http-nio-8080-exec-6] com.test.util.Validation - Validation : notesValidation() : Execution Start
+2025-01-27 13:52:43.728 INFO  [http-nio-8080-exec-6] com.test.util.Validation - Message : Notes validation starts!
+2025-01-27 13:52:44.473 INFO  [http-nio-8080-exec-6] c.test.service.impl.NotesServiceImpl - Message : Notes saved successfully!
+2025-01-27 13:52:44.473 INFO  [http-nio-8080-exec-6] com.test.controller.NotesController - NotesController : saveNotes() : Execution End
+2025-01-27 13:52:50.422 ERROR [http-nio-8080-exec-8] c.t.exception.GlobalExceptionHandler - GlobalExceptionHandler : handleException() : No static resource api/v1/notes/notes.
+2025-01-27 13:52:50.425 WARN  [http-nio-8080-exec-8] o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [org.springframework.web.servlet.resource.NoResourceFoundException: No static resource api/v1/notes/notes.]
+2025-01-27 13:53:39.919 ERROR [http-nio-8080-exec-10] c.t.exception.GlobalExceptionHandler - GlobalExceptionHandler : handleException() : Request method 'POST' is not supported
+2025-01-27 13:53:39.939 WARN  [http-nio-8080-exec-10] o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [org.springframework.web.HttpRequestMethodNotSupportedException: Request method 'POST' is not supported]
+2025-01-27 13:53:45.623 ERROR [http-nio-8080-exec-1] c.t.exception.GlobalExceptionHandler - GlobalExceptionHandler : resourceNotFoundException() : File is not available!
+2025-01-27 13:53:45.634 WARN  [http-nio-8080-exec-1] o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [com.test.exception.ResourceNotFoundException: File is not available!]
+2025-01-27 13:53:49.527 ERROR [http-nio-8080-exec-2] c.t.exception.GlobalExceptionHandler - GlobalExceptionHandler : resourceNotFoundException() : File is not available!
+2025-01-27 13:53:49.535 WARN  [http-nio-8080-exec-2] o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [com.test.exception.ResourceNotFoundException: File is not available!]
+2025-01-27 13:53:51.496 ERROR [http-nio-8080-exec-3] c.t.exception.GlobalExceptionHandler - GlobalExceptionHandler : resourceNotFoundException() : File is not available!
+2025-01-27 13:53:51.499 WARN  [http-nio-8080-exec-3] o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [com.test.exception.ResourceNotFoundException: File is not available!]
+2025-01-27 13:54:01.471 ERROR [http-nio-8080-exec-4] c.t.exception.GlobalExceptionHandler - GlobalExceptionHandler : resourceNotFoundException() : File is not available!
+2025-01-27 13:54:01.473 WARN  [http-nio-8080-exec-4] o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [com.test.exception.ResourceNotFoundException: File is not available!]
+2025-01-27 14:49:17.851 WARN  [HikariPool-1 housekeeper] com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=40m14s331ms917µs600ns).

@@ -27,7 +27,7 @@ public class AuthController implements AuthEnpoint {
 	private AuthService userService;
 	
 	@Override
-	public ResponseEntity<?> registerUser(@RequestBody UserRequest userDTO, HttpServletRequest request) throws Exception {
+	public ResponseEntity<?> registerUser(UserRequest userDTO, HttpServletRequest request) throws Exception {
 		log.info("AuthController : registerUser() : Execution Start");
 		String url = CommonUtils.getUrl(request);
 		Boolean status = userService.registerUser(userDTO, url);
@@ -42,7 +42,7 @@ public class AuthController implements AuthEnpoint {
 	}
 	
 	@Override
-	public ResponseEntity<?> loginUser(@RequestBody LoginRequest loginRequest) throws Exception {
+	public ResponseEntity<?> loginUser(LoginRequest loginRequest) throws Exception {
 		log.info("AuthController : loginUser() : Execution Start");
 		LoginResponse loginUser = userService.loginUser(loginRequest);
 		
