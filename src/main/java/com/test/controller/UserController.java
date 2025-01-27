@@ -13,13 +13,13 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.test.dto.PasswordChangeRequest;
 import com.test.dto.UserResponse;
+import com.test.endpoint.UserEndpoint;
 import com.test.model.User;
 import com.test.service.UserService;
 import com.test.util.CommonUtils;
 
 @RestController
-@RequestMapping("/api/v1/user")
-public class UserController {
+public class UserController implements UserEndpoint {
 	
 	@Autowired
 	private ModelMapper modelMapper;
@@ -27,7 +27,7 @@ public class UserController {
 	@Autowired
 	private UserService userService;
 
-	@GetMapping("/profile")
+	@Override
 	public ResponseEntity<?> userProfile() {
 		User loggedInUser = CommonUtils.getLoggedInUser();
 		UserResponse response = modelMapper.map(loggedInUser, UserResponse.class);
@@ -39,7 +39,7 @@ public class UserController {
 		return CommonUtils.createBuildResponse(null, HttpStatus.INTERNAL_SERVER_ERROR);
 	}
 	
-	@PostMapping("/change-password")
+	@Override
 	public ResponseEntity<?> changePassword(@RequestBody PasswordChangeRequest changeRequest) {
 		userService.changePassword(changeRequest);
 		return CommonUtils.createBuildResponseMessage("Password changed successfully!", HttpStatus.OK);

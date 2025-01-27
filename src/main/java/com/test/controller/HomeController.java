@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.test.dto.PasswordResetRequest;
+import com.test.endpoint.HomeEndpoint;
 import com.test.service.UserService;
 import com.test.service.impl.HomeService;
 import com.test.util.CommonUtils;
@@ -18,8 +19,7 @@ import com.test.util.CommonUtils;
 import jakarta.servlet.http.HttpServletRequest;
 
 @RestController
-@RequestMapping("/api/v1/home")
-public class HomeController {
+public class HomeController implements HomeEndpoint {
 	
 	@Autowired
 	private HomeService homeService;
@@ -27,7 +27,7 @@ public class HomeController {
 	@Autowired
 	private UserService userService;
 
-	@GetMapping("/verify")
+	@Override
 	public ResponseEntity<?> verifyUserAccount(@RequestParam Integer uid, @RequestParam String vcode) throws Exception {
 		
 		System.out.println(vcode);
@@ -39,21 +39,23 @@ public class HomeController {
 		return CommonUtils.createErrorResponseMessage("Invalid verification link!!", HttpStatus.BAD_REQUEST);
 	}
 	
+	
 //	Creating some handlers for reseting password:
-	@GetMapping("/send-password-reset-email")
+	@Override
 	public ResponseEntity<?> sendEmailForPasswordReset(@RequestParam String email, HttpServletRequest request) throws Exception {
 		userService.sendPasswordResetEmail(email, request);
 		return CommonUtils.createBuildResponseMessage("Reset password email sent successfully to " + email, HttpStatus.OK);
 	}
 	
-	@GetMapping("/verify-password-reset-link")
+	@Override
 	public ResponseEntity<?> verifyPasswordResetLink(@RequestParam Integer uid, @RequestParam
 			 String vcode) throws Exception {
 		userService.verifyPassResetLink(uid, vcode);
 		return CommonUtils.createBuildResponseMessage("Verification success!", HttpStatus.OK);
 	}
 	
-	@PostMapping("/reset-password")
+	
+	@Override
 	public ResponseEntity<?> resetPassword(@RequestBody PasswordResetRequest resetRequest) throws Exception {
 			userService.passwordReset(resetRequest);
 			return CommonUtils.createBuildResponseMessage("Password Reset Successfully!", HttpStatus.OK);

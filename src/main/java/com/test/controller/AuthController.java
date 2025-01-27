@@ -12,19 +12,19 @@ import org.springframework.web.bind.annotation.RestController;
 import com.test.dto.LoginRequest;
 import com.test.dto.LoginResponse;
 import com.test.dto.UserRequest;
+import com.test.endpoint.AuthEnpoint;
 import com.test.service.AuthService;
 import com.test.util.CommonUtils;
 
 import jakarta.servlet.http.HttpServletRequest;
 
 @RestController
-@RequestMapping("/api/v1/auth")
-public class AuthController {
+public class AuthController implements AuthEnpoint {
 
 	@Autowired
 	private AuthService userService;
 	
-	@PostMapping("/save")
+	@Override
 	public ResponseEntity<?> registerUser(@RequestBody UserRequest userDTO, HttpServletRequest request) throws Exception {
 		String url = CommonUtils.getUrl(request);
 		Boolean status = userService.registerUser(userDTO, url);
@@ -35,7 +35,7 @@ public class AuthController {
 		return CommonUtils.createErrorResponseMessage("Failed to register!", HttpStatus.INTERNAL_SERVER_ERROR);
 	}
 	
-	@PostMapping("/login")
+	@Override
 	public ResponseEntity<?> loginUser(@RequestBody LoginRequest loginRequest) throws Exception {
 		LoginResponse loginUser = userService.loginUser(loginRequest);
 		
