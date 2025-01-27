@@ -1,0 +1,49 @@
+2025-01-27 11:56:58.638 INFO  [restartedMain] c.test.EnotesApiServiceApplication - Starting EnotesApiServiceApplication using Java 21.0.3 with PID 14268 (E:\Spring Boot API\enotes\target\classes started by user in E:\Spring Boot API\enotes)
+2025-01-27 11:56:58.641 INFO  [restartedMain] c.test.EnotesApiServiceApplication - The following 1 profile is active: "dev"
+2025-01-27 11:56:59.974 INFO  [restartedMain] o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-01-27 11:57:00.039 INFO  [restartedMain] o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 61 ms. Found 7 JPA repository interfaces.
+2025-01-27 11:57:00.409 INFO  [restartedMain] o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
+2025-01-27 11:57:00.413 INFO  [restartedMain] o.a.catalina.core.StandardService - Starting service [Tomcat]
+2025-01-27 11:57:00.414 INFO  [restartedMain] o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.34]
+2025-01-27 11:57:00.456 INFO  [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2025-01-27 11:57:00.457 INFO  [restartedMain] o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1810 ms
+2025-01-27 11:57:00.914 INFO  [restartedMain] o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-01-27 11:57:00.922 INFO  [restartedMain] o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2025-01-27 11:57:00.949 INFO  [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-01-27 11:57:00.952 INFO  [restartedMain] com.zaxxer.hikari.HikariDataSource - HikariPool-27 - Starting...
+2025-01-27 11:57:01.096 INFO  [restartedMain] com.zaxxer.hikari.pool.HikariPool - HikariPool-27 - Added connection com.mysql.cj.jdbc.ConnectionImpl@4d4c72b4
+2025-01-27 11:57:01.097 INFO  [restartedMain] com.zaxxer.hikari.HikariDataSource - HikariPool-27 - Start completed.
+2025-01-27 11:57:01.101 WARN  [restartedMain] org.hibernate.orm.deprecation - HHH90000025: MySQL8Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-01-27 11:57:01.101 WARN  [restartedMain] org.hibernate.orm.deprecation - HHH90000026: MySQL8Dialect has been deprecated; use org.hibernate.dialect.MySQLDialect instead
+2025-01-27 11:57:01.102 INFO  [restartedMain] o.hibernate.orm.connections.pooling - HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-27)']
+	Database driver: undefined/unknown
+	Database version: 8.0
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-01-27 11:57:01.421 INFO  [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-01-27 11:57:01.424 INFO  [restartedMain] o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-01-27 11:57:02.426 INFO  [restartedMain] o.s.s.c.a.a.c.InitializeAuthenticationProviderBeanManagerConfigurer$InitializeAuthenticationProviderManagerConfigurer - Global AuthenticationManager configured with AuthenticationProvider bean with name getDaoAuthenticationProvider
+2025-01-27 11:57:02.427 WARN  [restartedMain] o.s.s.c.a.a.c.InitializeUserDetailsBeanManagerConfigurer$InitializeUserDetailsManagerConfigurer - Global AuthenticationManager configured with an AuthenticationProvider bean. UserDetailsService beans will not be used by Spring Security for automatically configuring username/password login. Consider removing the AuthenticationProvider bean. Alternatively, consider using the UserDetailsService in a manually instantiated DaoAuthenticationProvider. If the current configuration is intentional, to turn off this warning, increase the logging level of 'org.springframework.security.config.annotation.authentication.configuration.InitializeUserDetailsBeanManagerConfigurer' to ERROR
+2025-01-27 11:57:02.942 WARN  [restartedMain] o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-01-27 11:57:03.515 INFO  [restartedMain] o.s.b.d.a.OptionalLiveReloadServer - LiveReload server is running on port 35729
+2025-01-27 11:57:03.543 INFO  [restartedMain] o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8080 (http) with context path '/'
+2025-01-27 11:57:03.668 INFO  [restartedMain] c.test.EnotesApiServiceApplication - Started EnotesApiServiceApplication in 5.293 seconds (process running for 5635.496)
+2025-01-27 11:57:03.671 INFO  [restartedMain] o.s.b.d.a.ConditionEvaluationDeltaLoggingListener - Condition evaluation unchanged
+2025-01-27 11:57:38.890 INFO  [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-01-27 11:57:38.917 INFO  [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2025-01-27 11:57:40.720 INFO  [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet - Completed initialization in 1800 ms
+2025-01-27 11:57:53.919 INFO  [http-nio-8080-exec-3] com.test.controller.AuthController - AuthController : loginUser() : Execution Start
+2025-01-27 11:57:53.920 INFO  [http-nio-8080-exec-3] c.test.service.impl.AuthServiceImpl - AuthServiceImpl : loginUser() : Execution Start
+2025-01-27 11:57:54.997 INFO  [http-nio-8080-exec-3] c.test.service.impl.AuthServiceImpl - Message : User logged in successfully!
+2025-01-27 11:57:55.000 INFO  [http-nio-8080-exec-3] c.test.service.impl.AuthServiceImpl - AuthServiceImpl : loginUser() : Execution End
+2025-01-27 11:57:55.000 INFO  [http-nio-8080-exec-3] com.test.controller.AuthController - AuthController : loginUser() : Execution End
+2025-01-27 11:58:51.272 INFO  [http-nio-8080-exec-5] com.test.controller.NotesController - NotesController : saveNotes() : Execution Start
+2025-01-27 11:58:51.275 INFO  [http-nio-8080-exec-5] c.test.service.impl.NotesServiceImpl - NotesServiceImpl : saveNotes() : Execution Start
+2025-01-27 11:58:51.342 INFO  [http-nio-8080-exec-5] com.test.util.Validation - Validation : notesValidation() : Execution Start
+2025-01-27 11:58:51.343 INFO  [http-nio-8080-exec-5] com.test.util.Validation - Message : Notes validation starts!
+2025-01-27 11:58:51.379 INFO  [http-nio-8080-exec-5] c.test.service.impl.NotesServiceImpl - Message : Notes dummy notes! already exists!
+2025-01-27 11:58:51.396 ERROR [http-nio-8080-exec-5] c.t.exception.GlobalExceptionHandler - GlobalExceptionHandler : ExistDataException() : Notes [dummy notes!] already exists!
+2025-01-27 11:58:51.413 WARN  [http-nio-8080-exec-5] o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [com.test.exception.ExistDataException: Notes [dummy notes!] already exists!]

@@ -27,6 +27,9 @@ import com.test.model.FileDetails;
 import com.test.service.NotesService;
 import com.test.util.CommonUtils;
 
+import lombok.extern.slf4j.Slf4j;
+
+@Slf4j
 @RestController
 @RequestMapping("/api/v1/notes")
 public class NotesController {
@@ -37,13 +40,15 @@ public class NotesController {
 	@PostMapping("/save-notes")
 	@PreAuthorize("hasRole('USER')")
 	public ResponseEntity<?> saveNotes(@RequestParam String notes, @RequestParam(required = false) MultipartFile file) throws Exception {
+		log.info("NotesController : saveNotes() : Execution Start");
 		Boolean saveNotes = notesService.saveNotes(notes, file);
 		
-		if(saveNotes) {
-			return CommonUtils.createBuildResponseMessage("Notes saved successfully!", HttpStatus.CREATED);
+		if(!saveNotes) {
+			log.info("Error : Notes not saved!");
+			return CommonUtils.createErrorResponseMessage("Notes not saved!", HttpStatus.INTERNAL_SERVER_ERROR);
 		}
-		
-		return CommonUtils.createErrorResponseMessage("Notes not saved!", HttpStatus.INTERNAL_SERVER_ERROR);
+		log.info("NotesController : saveNotes() : Execution End");
+		return CommonUtils.createBuildResponseMessage("Notes saved successfully!", HttpStatus.CREATED);
 	}
 	
 	@GetMapping("/")

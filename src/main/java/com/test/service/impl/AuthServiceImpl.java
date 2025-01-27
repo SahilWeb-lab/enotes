@@ -28,6 +28,9 @@ import com.test.service.SendEmailService;
 import com.test.service.AuthService;
 import com.test.util.Validation;
 
+import lombok.extern.slf4j.Slf4j;
+
+@Slf4j
 @Service
 public class AuthServiceImpl implements AuthService {
 
@@ -57,7 +60,7 @@ public class AuthServiceImpl implements AuthService {
 	
 	@Override
 	public Boolean registerUser(UserRequest userDTO, String url) throws Exception {
-		
+		log.info("AuthServiceImpl : registerUser() : Execution Start");
 //		Call the method to validate user:
 		validation.userValidation(userDTO);
 		User user = modelMapper.map(userDTO, User.class);
@@ -74,17 +77,20 @@ public class AuthServiceImpl implements AuthService {
 		user.setPassword(passwordEncoder.encode(user.getPassword()));
 		User saveUser = userRepository.save(user);
 		
-		if(!ObjectUtils.isEmpty(saveUser)) {
-//			Send email:
-			sendEmailForRegistration(saveUser, url);
-			return true;
+		if(ObjectUtils.isEmpty(saveUser)) {
+			log.info("Error : {}", "Failed to save user");
+			return false;
 		}
 		
-		return false;
+//		Send email:
+		sendEmailForRegistration(saveUser, url);
+		log.info("Message : {}", "User registered successfully!");
+		log.info("AuthServiceImpl : registerUser() : Execution End");
+		return true;
 	}
 
 	private void sendEmailForRegistration(User saveUser, String url) throws Exception {
-		
+		log.info("AuthServiceImpl : sendEmailForRegistration() : Execution Start");
 		String msg = "Hi,<b>[[username]]</b> "
 				+ "<br> Your account register sucessfully.<br>"
 				+"<br> Click the below link verify & Active your account <br>"
@@ -105,6 +111,8 @@ public class AuthServiceImpl implements AuthService {
 								.build();
 		
 		emailService.send(request);
+		log.info("Message : {}", "Account verification email send success");
+		log.info("AuthServiceImpl : sendEmailForRegistration() : Execution End");
 	}
 
 	private void setRole(UserRequest userDTO, User user) {
@@ -115,13 +123,18 @@ public class AuthServiceImpl implements AuthService {
 
 	@Override
 	public LoginResponse loginUser(LoginRequest loginRequest) throws Exception {
-		
+		log.info("AuthServiceImpl : loginUser() : Execution Start");
 		String email = loginRequest.getEmail();
 		User user = userRepository.findByEmail(email);
 		
-		if(!user.getStatus().getIsActive()) {
-		 throw new IllegalArgumentException("Your account is not verified! Please verify your account!");
+		if(!ObjectUtils.isEmpty(user)) {			
+			if(!user.getStatus().getIsActive()) {
+				log.error("Error : Your account is not verified! Please verify your account!");
+				log.info("AuthServiceImpl : loginUser() : Execution End");
+				throw new IllegalArgumentException("Your account is not verified! Please verify your account!");
+			}
 		}
+		
 		
 		Authentication authenticate = authenticationManager.authenticate(new UsernamePasswordAuthenticationToken(loginRequest.getEmail(), loginRequest.getPassword()));
 		
@@ -134,9 +147,12 @@ public class AuthServiceImpl implements AuthService {
 					.user(modelMapper.map(customUserDetails.getUser(), UserResponse.class))
 					.token(token).build();
 			
+			log.info("Message : User logged in successfully!");
+			log.info("AuthServiceImpl : loginUser() : Execution End");
 			return loginResponse;
 		}
 		
+		log.info("AuthServiceImpl : loginUser() : Execution End");
 		return null;
 	}
 
