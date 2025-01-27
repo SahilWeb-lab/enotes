@@ -22,6 +22,9 @@ import com.test.model.Role;
 import com.test.repository.RoleRepository;
 import com.test.repository.UserRepository;
 
+import lombok.extern.slf4j.Slf4j;
+
+@Slf4j
 @Component
 public class Validation {
 	
@@ -86,6 +89,8 @@ public class Validation {
 	
 //	Notes Validation:
 	public void notesValidation(NotesDTO notesDTO) throws IllegalAccessException {
+		log.info("Validation : notesValidation() : Execution Start");
+		log.info("Message : Notes validation starts!");
 		Map<String, Object> errors = new LinkedHashMap<>();
 		
 		if(ObjectUtils.isEmpty(notesDTO)) {
@@ -108,6 +113,7 @@ public class Validation {
 			}
 			
 			if(!errors.isEmpty()) {
+				log.info("Validation : notesValidation() : Execution End");
 				throw new ValidationException(errors);
 			}
 		}

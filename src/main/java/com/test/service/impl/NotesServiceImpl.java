@@ -47,6 +47,9 @@ import com.test.service.NotesService;
 import com.test.util.CommonUtils;
 import com.test.util.Validation;
 
+import lombok.extern.slf4j.Slf4j;
+
+@Slf4j
 @Service
 public class NotesServiceImpl implements NotesService {
 
@@ -73,8 +76,7 @@ public class NotesServiceImpl implements NotesService {
 
 	@Override
 	public Boolean saveNotes(String notes, MultipartFile file) throws Exception {
-		
-
+		log.info("NotesServiceImpl : saveNotes() : Execution Start");
 		ObjectMapper objectMapper = new ObjectMapper();
 		NotesDTO notesDTO = objectMapper.readValue(notes, NotesDTO.class);
 
@@ -90,6 +92,7 @@ public class NotesServiceImpl implements NotesService {
 		Boolean existsByTitle = notesRepository.existsByTitle(notesDTO.getTitle().trim());
 
 		if (existsByTitle) {
+			log.info("Message : Notes {} already exists!", notesDTO.getTitle());
 			throw new ExistDataException("Notes [" + notesDTO.getTitle() + "] already exists!");
 		}
 
@@ -114,9 +117,11 @@ public class NotesServiceImpl implements NotesService {
 		Notes saveNotes = notesRepository.save(notesMap);
 
 		if (!ObjectUtils.isEmpty(saveNotes)) {
+			log.info("Message : Notes saved successfully!");
 			return true;
 		}
 
+		log.info("NotesServiceImpl : saveNotes() : Execution End");
 		return false;
 	}
 	
