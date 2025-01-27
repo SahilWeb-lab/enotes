@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.RestController;
 import com.test.dto.LoginRequest;
 import com.test.dto.LoginResponse;
 import com.test.dto.UserRequest;
+import com.test.endpoint.AuthEnpoint;
 import com.test.service.AuthService;
 import com.test.util.CommonUtils;
 
@@ -20,13 +21,12 @@ import lombok.extern.slf4j.Slf4j;
 
 @Slf4j
 @RestController
-@RequestMapping("/api/v1/auth")
-public class AuthController {
+public class AuthController implements AuthEnpoint {
 
 	@Autowired
 	private AuthService userService;
 	
-	@PostMapping("/save")
+	@Override
 	public ResponseEntity<?> registerUser(@RequestBody UserRequest userDTO, HttpServletRequest request) throws Exception {
 		log.info("AuthController : registerUser() : Execution Start");
 		String url = CommonUtils.getUrl(request);
@@ -41,7 +41,7 @@ public class AuthController {
 		return CommonUtils.createBuildResponseMessage("User registered successfully!", HttpStatus.CREATED);
 	}
 	
-	@PostMapping("/login")
+	@Override
 	public ResponseEntity<?> loginUser(@RequestBody LoginRequest loginRequest) throws Exception {
 		log.info("AuthController : loginUser() : Execution Start");
 		LoginResponse loginUser = userService.loginUser(loginRequest);

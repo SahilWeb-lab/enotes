@@ -14,17 +14,17 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.test.dto.TodoDTO;
+import com.test.endpoint.TodoEndpoint;
 import com.test.service.TodoService;
 import com.test.util.CommonUtils;
 
 @RestController
-@RequestMapping("/api/v1/todo")
-public class TodoController {
+public class TodoController implements TodoEndpoint {
 	
 	@Autowired
 	private TodoService todoService;
 	
-	@PostMapping("/save")
+	@Override
 	public ResponseEntity<?> saveTodo(@RequestBody TodoDTO todoDTO) {
 		Boolean saveTodo = todoService.saveTodo(todoDTO);
 		
@@ -35,13 +35,13 @@ public class TodoController {
 		}
 	}
 	
-	@GetMapping("/{id}")
+	@Override
 	public ResponseEntity<?> getTodo(@PathVariable Integer id) throws Exception {
 		TodoDTO todoDTO = todoService.getTodoById(id);
 		return CommonUtils.createBuildResponse(todoDTO, HttpStatus.OK);
 	}
 	
-	@GetMapping("/")
+	@Override
 	public ResponseEntity<?> getAllTodos() {
 		List<TodoDTO> todoByUser = todoService.getTodoByUser();
 		

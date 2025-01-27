@@ -18,6 +18,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.test.dto.CategoryDTO;
 import com.test.dto.CategoryResponse;
+import com.test.endpoint.CategoryEndpoint;
 import com.test.model.Category;
 import com.test.service.CategoryService;
 import com.test.util.CommonUtils;
@@ -25,14 +26,12 @@ import com.test.util.CommonUtils;
 import jakarta.validation.Valid;
 
 @RestController
-@RequestMapping("/api/v1/category")
-public class CategoryController {
+public class CategoryController implements CategoryEndpoint {
 	
 	@Autowired
 	private CategoryService categoryService;
 	
-	@PostMapping("/save-category")
-	@PreAuthorize("hasRole('ADMIN')")
+	@Override
 	public ResponseEntity<?> saveCategory(@RequestBody CategoryDTO category) {
 		Boolean saveCategory = categoryService.saveCategory(category);
 		
@@ -45,8 +44,7 @@ public class CategoryController {
 //		return new ResponseEntity<>("Failed to save category!", HttpStatus.INTERNAL_SERVER_ERROR);
 	}
 	
-	@GetMapping("/categories")
-	@PreAuthorize("hasRole('ADMIN')")
+	@Override
 	public ResponseEntity<?> getAllCategories() {
 		List<CategoryDTO> allCategories = categoryService.getAllCategories();
 		
@@ -60,9 +58,8 @@ public class CategoryController {
 		return CommonUtils.createBuildResponse(allCategories, HttpStatus.OK);
 	}
 	
-//	Create a handler to show active categories:
-	@GetMapping("/active-categories")
-	@PreAuthorize("hasAnyRole('USER', 'ADMIN')")
+	
+	@Override
 	public ResponseEntity<?> getActiveCategories() {
 List<CategoryResponse> allCategories = categoryService.getActiveCategories();
 		
@@ -74,9 +71,8 @@ List<CategoryResponse> allCategories = categoryService.getActiveCategories();
 //		return new ResponseEntity<>(allCategories, HttpStatus.OK);
 	}
 	
-//	Create a handler to get category by id:
-	@GetMapping("/{id}")
-	@PreAuthorize("hasRole('ADMIN')")
+	
+	@Override
 	public ResponseEntity<?> getCategoryById(@PathVariable Integer id) throws Exception {
 		CategoryDTO categoryById = categoryService.getCategoryById(id);
 		
@@ -90,9 +86,7 @@ List<CategoryResponse> allCategories = categoryService.getActiveCategories();
 		return null;
 	}
 	
-//	Create a handler to delete the category by id:
-	@DeleteMapping("/{id}")
-	@PreAuthorize("hasRole('ADMIN')")
+	@Override
 	public ResponseEntity<?> deleteCategory(@PathVariable Integer id) {
 		Boolean deleteCategory = categoryService.deleteCategory(id);
 		
