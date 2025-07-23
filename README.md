@@ -19,24 +19,24 @@
 src/
 ├── main/
 │ ├── java/com/test/
-│ │ ├── config/ # Configurations
-│ │ ├── controller/ # REST API endpoints implementation
-│ │ ├── dto/ # Data transfer objects
-│ │ ├── endpoint/ # REST API endpoints declaration
-│ │ ├── enums/ # Enum
-│ │ ├── exception/ # Custom exception handling
-│ │ ├── handle/ # Generic Response Handler
-│ │ ├── model/ # Entity classes
-│ │ ├── repository/ # Spring Data JPA repositories
-│ │ ├── schedular/ # Schedular
-│ │ ├── service/ # Business logic interface
-│ │ ├── service/impl # Business logic implementation
-│ │ ├── util # Utility Classes
-│ │ └── EnotesApiServiceApplication.java # Main Spring Boot application
+│ │ ├── config/
+│ │ ├── controller/
+│ │ ├── dto/
+│ │ ├── endpoint/
+│ │ ├── enums/
+│ │ ├── exception/
+│ │ ├── handle/
+│ │ ├── model/
+│ │ ├── repository/
+│ │ ├── schedular/
+│ │ ├── service/
+│ │ ├── service/impl/
+│ │ ├── util/
+│ │ └── EnotesApiServiceApplication.java
 │ └── resources/
-│ ├── application.properties # App configuration
-│ └── static/ # Static resources (if any)
-└── test/ # Unit and integration tests
+│ ├── application.properties
+│ └── static
+└── test/
 </code></pre>
 ---
 
@@ -54,4 +54,23 @@ src/
 - Maven
 
 ---
+## 👤 Author
+
+**Sahil Kumar Mandal**
+
+- 💼 [LinkedIn](https://www.linkedin.com/in/sahil-mandal-588380245/)
+- 🐙 [GitHub](https://github.com/SahilWeb-lab)
+- 📧 Email: [mandalsahil253@gmail.com](mailto:mandalsahil253@gmail.com)
+
+---
+
+## 🛠️ Installation & Run
+
+```bash
+# Clone the repository
+git clone https://github.com/SahilWeb-lab/enotes.git
+cd enotes
+
+# Build and run
+./mvnw spring-boot:run
 
